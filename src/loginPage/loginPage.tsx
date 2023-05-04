@@ -2,14 +2,16 @@ import { View, Text, FlatList } from 'react-native'
 import React from 'react'
 import style from './style'
 import { CustomButton, CustomInput, Divider } from '../components'
-import { Email, Password } from '../assets'
+import { BusLottie, Email, Password } from '../assets'
 import { AnotherLoginList } from '../utils/helper'
 import { AnotherLoginCard } from '../components/cards'
+import Lottie from 'lottie-react-native'
 
 export const LoginPage = () => {
     const render = ({ item }: any) => <AnotherLoginCard image={item.value} />
     return (
         <View style={style.container}>
+            <Lottie source={BusLottie} autoPlay loop style={style.busLottie} />
             <View style={style.backgroundShapeView}>
                 <CustomInput
                     image={Email}
@@ -30,6 +32,12 @@ export const LoginPage = () => {
                         renderItem={render}
                         horizontal />
                 </View>
+                <Text style={style.haveAccountTxt}>
+                    Don't have an account?
+                    <Text style={style.signUpTxt}>
+                        {' '} Sign up
+                    </Text>
+                </Text>
             </View>
         </View>
     )
