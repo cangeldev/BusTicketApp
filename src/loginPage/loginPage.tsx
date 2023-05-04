@@ -1,7 +1,7 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import style from './style'
-import { CustomButton, CustomInput } from '../components'
+import { CustomButton, CustomInput, Divider } from '../components'
 import { Email, Password } from '../assets'
 
 export const LoginPage = () => {
@@ -20,6 +20,7 @@ export const LoginPage = () => {
                     Forgot Password?
                 </Text>
                 <CustomButton title='Log in' />
+                <Divider />
             </View>
         </View>
     )
