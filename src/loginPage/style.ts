@@ -11,10 +11,14 @@ export default StyleSheet.create({
         backgroundColor: colors.backgroundShape,
         borderTopLeftRadius: 30,
         borderTopRightRadius: 30,
-        padding:7
+        padding: 7
     },
     forgotPasswordTxt: {
         alignSelf: "flex-end",
-        marginRight:18
+        marginRight: 18
+    },
+    anotherLoginView: {
+        padding: 10,
+        alignItems: "center"
     }
 })
