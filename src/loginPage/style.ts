@@ -40,7 +40,7 @@ export default StyleSheet.create({
         fontSize: 40,
         fontWeight: "bold",
         alignSelf: "center",
-        marginVertical: 10,
+        marginVertical: 7,
         color: colors.white
     },
     titleExt: {

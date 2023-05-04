@@ -1,4 +1,4 @@
-import { View, Text, FlatList } from 'react-native'
+import { View, Text, FlatList, StatusBar } from 'react-native'
 import React from 'react'
 import style from './style'
 import { CustomButton, CustomInput, Divider } from '../components'
@@ -6,12 +6,17 @@ import { BusLottie } from '../assets'
 import { AnotherLoginList } from '../utils/helper'
 import { AnotherLoginCard } from '../components/cards'
 import Lottie from 'lottie-react-native'
+import colors from '../assets/colors/colors'
 
 export const LoginPage = () => {
     const render = ({ item }: any) => <AnotherLoginCard image={item.value} />
 
     return (
         <View style={style.container}>
+            <StatusBar
+                backgroundColor={colors.buttonBackground}
+                barStyle={"light-content"}
+            />
             <View style={style.titleView}>
                 <Text style={style.title}>
                     Bilet Havuzu
