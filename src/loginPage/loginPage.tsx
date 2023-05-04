@@ -2,29 +2,45 @@ import { View, Text, FlatList } from 'react-native'
 import React from 'react'
 import style from './style'
 import { CustomButton, CustomInput, Divider } from '../components'
-import { BusLottie, Email, Password } from '../assets'
+import { BusLottie } from '../assets'
 import { AnotherLoginList } from '../utils/helper'
 import { AnotherLoginCard } from '../components/cards'
 import Lottie from 'lottie-react-native'
 
 export const LoginPage = () => {
     const render = ({ item }: any) => <AnotherLoginCard image={item.value} />
+
     return (
         <View style={style.container}>
-            <Lottie source={BusLottie} autoPlay loop style={style.busLottie} />
-            <View style={style.backgroundShapeView}>
+            <View style={style.titleView}>
+                <Text style={style.title}>
+                    Bilet Havuzu
+                    <Text style={style.titleExt}>
+                        .com
+                    </Text>
+                </Text>
+            </View>
+            <Lottie
+                source={BusLottie}
+                autoPlay
+                loop
+                style={style.busLottie}
+            />
+            <View style={style.contentView}>
                 <CustomInput
-                    image={Email}
+                    title='Email:'
                     placeHolder='example@gmail.com'
                 />
                 <CustomInput
-                    image={Password}
+                    title='Password:'
                     placeHolder='********'
                 />
                 <Text style={style.forgotPasswordTxt}>
                     Forgot Password?
                 </Text>
-                <CustomButton title='Log in' />
+                <View style={style.buttonView}>
+                    <CustomButton title='Log in' />
+                </View>
                 <Divider />
                 <View style={style.anotherLoginView}>
                     <FlatList
@@ -33,9 +49,9 @@ export const LoginPage = () => {
                         horizontal />
                 </View>
                 <Text style={style.haveAccountTxt}>
-                    Don't have an account?
+                    Don't have an account?{' '}
                     <Text style={style.signUpTxt}>
-                        {' '} Sign up
+                        Sign up
                     </Text>
                 </Text>
             </View>

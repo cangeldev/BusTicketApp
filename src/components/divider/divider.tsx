@@ -8,7 +8,7 @@ export const Divider = () => {
             <View style={style.containerWrap} />
             <View >
                 <Text style={style.text}>
-                    Or continue with
+                    Or Continue with
                 </Text>
             </View >
             <View style={style.containerWrap} />

@@ -1,15 +1,18 @@
-import { View, Text, Image, TextInput } from 'react-native'
+import { View, Text, TextInput } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
 
 interface ICustomInput {
-    image: Image,
+    title: string,
     placeHolder: string
 }
-export const CustomInput: FC<ICustomInput> = ({ image, placeHolder }) => {
+
+export const CustomInput: FC<ICustomInput> = ({ placeHolder, title }) => {
     return (
         <View style={style.container}>
-            <Image source={image as any} style={style.image} />
+            <Text style={style.title}>
+                {title}
+            </Text>
             <TextInput
                 style={style.txtInput}
                 placeholder={placeHolder}

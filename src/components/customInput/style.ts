@@ -1,24 +1,22 @@
 import { StyleSheet } from 'react-native'
 import colors from '../../assets/colors/colors'
-export default StyleSheet.create({
 
+export default StyleSheet.create({
     container: {
         marginHorizontal: 15,
-        flexDirection: "row",
-        alignItems: "center",
-        marginVertical:5
+        marginVertical: 7,
     },
-    image: {
-        width: 24,
-        height: 24,
+    title: {
+        fontWeight: "bold",
+        color: colors.black,
+        marginHorizontal: 5,
+        marginBottom: 5
     },
     txtInput: {
-        borderRadius: 20,
+        borderRadius: 6,
         backgroundColor: colors.white,
-        marginLeft: 10,
-        overflow: "hidden",
-        flex: 1,
-        paddingHorizontal: 15,
-        paddingVertical: 5
+        elevation: 3,
+        paddingHorizontal: 10,
+        paddingVertical: 8,
     }
 })

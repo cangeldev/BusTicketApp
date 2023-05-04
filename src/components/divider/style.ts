@@ -5,12 +5,13 @@ export default StyleSheet.create({
     containerWrap: {
         flex: 1,
         height: 1,
-        backgroundColor: colors.orange,
+        backgroundColor: "#f3f3f3",
     },
     container: {
         marginHorizontal: 25,
         flexDirection: 'row',
         alignItems: 'center',
+        marginVertical: 7
     },
     text: {
         width: 100,

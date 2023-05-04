@@ -6,30 +6,47 @@ export default StyleSheet.create({
         backgroundColor: colors.white,
         flex: 1,
     },
-    backgroundShapeView: {
-        backgroundColor: colors.backgroundShape,
-        borderTopLeftRadius: 30,
-        borderTopRightRadius: 30,
-        padding: 7,
-        flexGrow: 1
+    contentView: {
+        padding: 5,
+        marginTop: -10
     },
     forgotPasswordTxt: {
         alignSelf: "flex-end",
-        marginRight: 18
+        marginHorizontal: 18,
+        fontSize: 12,
+        color: colors.black,
+        textDecorationLine: "underline"
     },
     anotherLoginView: {
         padding: 10,
         alignItems: "center"
     },
     haveAccountTxt: {
-        textAlign: "center",
+        alignSelf: "center",
+        color: colors.black
     },
     signUpTxt: {
-        color: colors.orange,
+        color: colors.buttonBackground,
+        textDecorationLine: "underline"
     },
     busLottie: {
-        height: 220,
-      
+        height: 310,
         alignSelf: "center"
+    },
+    titleView: {
+        backgroundColor: colors.buttonBackground
+    },
+    title: {
+        fontSize: 40,
+        fontWeight: "bold",
+        alignSelf: "center",
+        marginVertical: 10,
+        color: colors.white
+    },
+    titleExt: {
+        fontSize: 12
+    },
+    buttonView: {
+        marginTop: 10
     }
 })
