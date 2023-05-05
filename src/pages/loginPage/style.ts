@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import colors from '../assets/colors/colors'
+import colors from '../../assets/colors/colors'
 
 export default StyleSheet.create({
     container: {
@@ -9,10 +9,20 @@ export default StyleSheet.create({
     contentView: {
         padding: 8,
     },
+    forgotPasswordTxt: {
+        alignSelf: "flex-end",
+        marginHorizontal: 18,
+        fontSize: 12,
+        color: colors.LoginTxt,
+        textDecorationLine: "underline"
+    },
+    anotherLoginView: {
+        padding: 10,
+        alignItems: "center"
+    },
     haveAccountTxt: {
         alignSelf: "center",
-        color: colors.black,
-        marginTop: 20
+        color: colors.black
     },
     signUpTxt: {
         color: colors.LoginTxt,
@@ -36,7 +46,7 @@ export default StyleSheet.create({
         fontSize: 12
     },
     buttonView: {
-        marginTop: 30
+        marginTop: 10
     },
     backIcon: {
         position: "absolute",

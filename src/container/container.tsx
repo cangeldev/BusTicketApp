@@ -1,12 +1,11 @@
-import { View, Text } from 'react-native'
+import { View } from 'react-native'
 import React from 'react'
-import { LoginPage } from '../loginPage'
-import { SignInPage } from '../signInPage/signInPage'
+import { HomePage } from '../pages'
 
 export const Container = () => {
     return (
         <View style={{ flex: 1 }}>
-            <SignInPage />
+            <HomePage />
         </View>
     )
 }
