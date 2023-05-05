@@ -7,7 +7,7 @@ import { AnotherLoginList } from '../utils/helper'
 import { AnotherLoginCard } from '../components/cards'
 import Lottie from 'lottie-react-native'
 import colors from '../assets/colors/colors'
-
+import Icon from 'react-native-vector-icons/AntDesign';
 export const LoginPage = () => {
     const render = ({ item }: any) => <AnotherLoginCard image={item.value} />
 
@@ -18,8 +18,9 @@ export const LoginPage = () => {
                 barStyle={"light-content"}
             />
             <View style={style.titleView}>
+                <Icon name="arrowleft" size={30} color={colors.white} style={style.backIcon} />
                 <Text style={style.title}>
-                    Bilet Havuzu
+                    BiletFırsatı
                     <Text style={style.titleExt}>
                         .com
                     </Text>
