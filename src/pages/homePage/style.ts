@@ -34,7 +34,7 @@ export default StyleSheet.create({
         marginTop: 10
     },
     vehicleView: {
-        marginTop: 20,
+        marginTop: 30,
         marginBottom: 10,
         marginHorizontal: 24,
         alignItems: "center",
@@ -50,8 +50,49 @@ export default StyleSheet.create({
         backgroundColor: colors.white,
         position: "absolute",
         right: 40,
-        borderWidth: 1,
-        padding: 5,
+        elevation: 3,
+        padding: 8,
         borderRadius: 40
+    },
+    selectDateView: {
+        backgroundColor: colors.white,
+        elevation: 2,
+        borderRadius: 10,
+        alignSelf: "center",
+        padding: 10,
+        marginBottom: 20
+    },
+    innerDateView: {
+        flexDirection: "row",
+        alignItems: "center",
+    },
+    dateTxt: {
+        fontSize: 12
+    },
+    day: {
+        fontSize: 50,
+        marginRight: 5,
+        color: colors.black,
+        fontWeight: "700"
+    },
+    dateIcon: {
+        marginLeft: 10,
+        color: colors.black
+    },
+    weatherConteiner: {
+        flexDirection: "row",
+        marginTop: 20,
+        marginHorizontal:20,
+        justifyContent: "space-around",
+    },
+    weatherTitle:{
+        marginHorizontal:25,
+        fontSize:16,
+        fontWeight:"bold",
+        marginVertical:10,
+        color:colors.black,
+        textAlign:"center"
     }
+
+   
 })

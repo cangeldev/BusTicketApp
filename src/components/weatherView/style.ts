@@ -3,28 +3,23 @@ import colors from "../../assets/colors/colors"
 
 export default StyleSheet.create({
     container: {
-        elevation: 2,
         backgroundColor: colors.white,
-        marginHorizontal: 25,
-        paddingHorizontal: 16,
-        paddingVertical: 10,
-        borderRadius: 6,
-        margin: 15,
-        flexDirection: "row"
+        elevation: 3,
+        marginHorizontal: 10,
+        padding: 10,
+        borderRadius: 10,
+        minWidth:150,
     },
     title: {
         position: "absolute",
         top: -12,
         backgroundColor: colors.white,
-        left: 10,
+        left: 6,
         color: colors.black,
         paddingHorizontal: 6
     },
-    icon: {
-        color: colors.black
+    weatherHeat: {
+        fontSize: 50
     },
-    txt: {
-        marginLeft: 10,
-        fontSize: 15
-    }
+
 })
