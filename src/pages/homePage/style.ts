@@ -34,11 +34,24 @@ export default StyleSheet.create({
         marginTop: 10
     },
     vehicleView: {
-        marginVertical: 15,
+        marginTop: 20,
+        marginBottom: 10,
         marginHorizontal: 24,
         alignItems: "center",
         borderRadius: 12,
         overflow: "hidden",
         backgroundColor: "#eff3f2"
+    },
+    selectTicketView: {
+        paddingVertical: 15,
+        justifyContent: "center"
+    },
+    changeTicketIconView: {
+        backgroundColor: colors.white,
+        position: "absolute",
+        right: 40,
+        borderWidth: 1,
+        padding: 5,
+        borderRadius: 40
     }
 })

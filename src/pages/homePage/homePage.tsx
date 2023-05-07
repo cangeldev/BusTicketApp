@@ -5,6 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import { VehicleCard } from '../../components/cards';
 import { VehicleList } from '../../utils/helper';
 import colors from '../../assets/colors/colors';
+import { SelectTicketButton } from '../../components';
 
 export const HomePage = () => {
     const [selectedItemId, setSelectedItemId] = React.useState(null);
@@ -43,6 +44,22 @@ export const HomePage = () => {
                         renderItem={render}
                         horizontal
                     />
+                </View>
+                <View style={style.selectTicketView}>
+                    <SelectTicketButton
+                        title='Nereden'
+                        placeHolder="Lütfen İl veya İlçe Seçiniz"
+                    />
+                    <SelectTicketButton
+                        title='Nereye'
+                        placeHolder="Lütfen İl veya İlçe Seçiniz"
+                    />
+                    <View style={style.changeTicketIconView}>
+                        <Icon
+                            name="swap-vertical"
+                            size={26}
+                        />
+                    </View>
                 </View>
             </View>
         </View>
