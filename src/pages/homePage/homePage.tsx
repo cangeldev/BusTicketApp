@@ -2,11 +2,11 @@ import { View, Text, FlatList, StatusBar, TouchableOpacity } from 'react-native'
 import React from 'react'
 import style from './style'
 import Icon from 'react-native-vector-icons/Ionicons';
-import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import { VehicleCard } from '../../components/cards';
 import { VehicleList } from '../../utils/helper';
 import colors from '../../assets/colors/colors';
-import { CustomButton, CityDropdown, WeatherView } from '../../components';
+import { CustomButton, CityDropdown, WeatherView, DateSelect } from '../../components';
 
 export const HomePage = () => {
     const [selectedItemId, setSelectedItemId] = React.useState(1);
@@ -50,8 +50,14 @@ export const HomePage = () => {
                     Tahmini Hava Durumu
                 </Text>
                 <View style={style.weatherConteiner}>
-                    <WeatherView title=' Nereden' place="İstanbul" />
-                    <WeatherView title='Nereye' place="Ankara" />
+                    <WeatherView
+                        title=' Nereden'
+                        place="İstanbul"
+                    />
+                    <WeatherView
+                        title='Nereye'
+                        place="Ankara"
+                    />
                 </View>
                 <View style={style.selectTicketView}>
 
@@ -64,29 +70,7 @@ export const HomePage = () => {
                         />
                     </View>
                 </View>
-                <TouchableOpacity style={style.selectDateView}>
-                    <Text >
-                        Gidiş Tarihi Seçiniz:
-                    </Text>
-                    <View style={style.innerDateView}>
-                        <Text style={style.day}>
-                            8
-                        </Text>
-                        <View>
-                            <Text style={style.dateTxt}>
-                                Mayıs
-                            </Text>
-                            <Text style={style.dateTxt}>
-                                Pazartesi
-                            </Text>
-                        </View>
-                        <IconM
-                            name="calendar-month"
-                            size={30}
-                            style={style.dateIcon}
-                        />
-                    </View>
-                </TouchableOpacity>
+                <DateSelect />
                 <CustomButton title='Ucuz Bilet Bul' />
             </View>
         </View>

@@ -13,6 +13,7 @@
     "lottie-react-native": "^5.1.5",
     "react": "18.2.0",
     "react-native": "0.71.7",
+    "react-native-date-picker": "^4.2.13",
     "react-native-select-dropdown": "^3.3.3",
     "react-native-vector-icons": "^9.2.0"
   },

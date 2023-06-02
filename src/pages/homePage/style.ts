@@ -55,35 +55,10 @@ export default StyleSheet.create({
         padding: 8,
         borderRadius: 40
     },
-    selectDateView: {
-        backgroundColor: colors.white,
-        elevation: 2,
-        borderRadius: 10,
-        alignSelf: "center",
-        padding: 10,
-        marginBottom: 20
-    },
-    innerDateView: {
-        flexDirection: "row",
-        alignItems: "center",
-    },
-    dateTxt: {
-        fontSize: 12
-    },
-    day: {
-        fontSize: 50,
-        marginRight: 5,
-        color: colors.black,
-        fontWeight: "700"
-    },
-    dateIcon: {
-        marginLeft: 10,
-        color: colors.black
-    },
     weatherConteiner: {
         flexDirection: "row",
         marginTop: 20,
-        marginHorizontal:5,
+        marginHorizontal: 5,
         justifyContent: "space-around",
     },
     weatherTitle: {
@@ -94,6 +69,4 @@ export default StyleSheet.create({
         color: colors.black,
         textAlign: "center"
     }
-
-
 })
