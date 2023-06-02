@@ -17,19 +17,20 @@ export default StyleSheet.create({
         backgroundColor: colors.white,
         left: 6,
         color: colors.black,
-        paddingHorizontal: 6
+        paddingHorizontal: 6,
+        fontWeight: "bold"
     },
     weatherHeat: {
         fontSize: 50
     },
     cityText: {
         overflow: "hidden",
-        fontSize:13
+        fontSize: 13
     },
     countryText: {
         color: colors.black,
-        fontWeight:"bold",
-        fontSize:14
+        fontWeight: "bold",
+        fontSize: 14
     },
     image: {
         width: 60,

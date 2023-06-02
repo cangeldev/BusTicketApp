@@ -1,14 +1,14 @@
-import { View, Text, FlatList, StatusBar, TouchableOpacity } from 'react-native'
+import { View, Text, FlatList, StatusBar } from 'react-native'
 import React from 'react'
 import style from './style'
-import Icon from 'react-native-vector-icons/Ionicons';
-
-import { VehicleCard } from '../../components/cards';
-import { VehicleList } from '../../utils/helper';
-import colors from '../../assets/colors/colors';
-import { CustomButton, CityDropdown, WeatherView, DateSelect } from '../../components';
+import Icon from 'react-native-vector-icons/Ionicons'
+import { VehicleCard } from '../../components/cards'
+import { VehicleList } from '../../utils/helper'
+import colors from '../../assets/colors/colors'
+import { CustomButton, CityDropdown, WeatherView, DateSelect } from '../../components'
 
 export const HomePage = () => {
+
     const [selectedItemId, setSelectedItemId] = React.useState(1);
     const render = ({ item }: any) =>
         <VehicleCard
@@ -18,6 +18,7 @@ export const HomePage = () => {
             selectedItemId={selectedItemId as any}
             onClick={() => setSelectedItemId(item.id)}
         />
+
     return (
         <View style={style.container}>
             <StatusBar
@@ -60,9 +61,8 @@ export const HomePage = () => {
                     />
                 </View>
                 <View style={style.selectTicketView}>
-
-                    <CityDropdown title='Nereden' />
-                    <CityDropdown title='Nereye' />
+                    <CityDropdown title='Kalkış Noktası' />
+                    <CityDropdown title='Varış Noktası' />
                     <View style={style.changeTicketIconView}>
                         <Icon
                             name="swap-vertical"

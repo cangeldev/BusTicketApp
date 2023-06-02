@@ -38,7 +38,7 @@ export const DateSelect = () => {
                     </Text>
                     <View>
                         <Text style={style.dateTxt}>
-                        {getMonthText(date)}
+                            {getMonthText(date)}
                         </Text>
                         <Text style={style.dateTxt}>
                             {getDayText(date)}
@@ -52,8 +52,8 @@ export const DateSelect = () => {
                 </View>
             </TouchableOpacity>
             <DatePicker
-            cancelText='İptal'
-            confirmText='Onayla'
+                cancelText='İptal'
+                confirmText='Onayla'
                 title={"Lütfen Tarih Seçiniz:"}
                 mode='date'
                 modal

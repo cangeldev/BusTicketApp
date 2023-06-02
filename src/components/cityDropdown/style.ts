@@ -11,7 +11,8 @@ export default StyleSheet.create({
         backgroundColor: colors.white,
         alignSelf: "flex-start",
         position: "absolute",
-        marginTop: -12
+        marginTop: -12,
+        fontWeight: "bold"
     },
     buttonTextStyle: {
         color: colors.black,

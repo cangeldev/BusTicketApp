@@ -2,9 +2,6 @@ import { StyleSheet } from "react-native"
 import colors from "../../assets/colors/colors"
 
 export default StyleSheet.create({
-    container: {
-
-    },
     selectDateView: {
         backgroundColor: colors.white,
         elevation: 2,
@@ -25,8 +22,9 @@ export default StyleSheet.create({
         marginRight: 5,
         color: colors.black,
         fontWeight: "700"
-    }, dateIcon: {
+    },
+    dateIcon: {
         marginLeft: 5,
         color: colors.black
-    },
+    }
 })

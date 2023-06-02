@@ -39,7 +39,6 @@ export const CityDropdown: FC<ICityDropDown> = ({ title }) => {
                     return selectedItem
                 }}
                 rowTextForSelection={(item, index) => {
-
                     // text represented for each item in dropdown
                     // if data array is an array of objects then return item.property to represent item in dropdown
                     return item

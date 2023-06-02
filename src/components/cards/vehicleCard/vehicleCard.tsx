@@ -18,13 +18,22 @@ export const VehicleCard: FC<IVehicleCard> = ({ title, vehicle, id, selectedItem
         <TouchableOpacity
             onPress={onClick}
             style={[style.container,
-            { backgroundColor: id === selectedItemId ? colors.buttonBackground : '#eff3f2' }]}>
+            {
+                backgroundColor: id === selectedItemId ?
+                    colors.buttonBackground : '#eff3f2'
+            }]}>
             <Icon
                 name={vehicle}
                 size={20}
-                style={{ color: id === selectedItemId ? colors.white : "grey" }}
+                style={{
+                    color: id === selectedItemId ?
+                        colors.white : "grey"
+                }}
             />
-            <Text style={[style.txt, { color: id === selectedItemId ? colors.white : colors.black }]}>
+            <Text style={[style.txt, {
+                color: id === selectedItemId ?
+                    colors.white : colors.black
+            }]}>
                 {title}
             </Text>
         </TouchableOpacity>
