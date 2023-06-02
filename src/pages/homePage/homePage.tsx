@@ -6,10 +6,10 @@ import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
 import { VehicleCard } from '../../components/cards';
 import { VehicleList } from '../../utils/helper';
 import colors from '../../assets/colors/colors';
-import { CustomButton, SelectTicketButton, WeatherView } from '../../components';
+import { CustomButton, CityDropdown, WeatherView } from '../../components';
 
 export const HomePage = () => {
-    const [selectedItemId, setSelectedItemId] = React.useState(null);
+    const [selectedItemId, setSelectedItemId] = React.useState(1);
     const render = ({ item }: any) =>
         <VehicleCard
             title={item.title}
@@ -54,14 +54,9 @@ export const HomePage = () => {
                     <WeatherView title='Nereye' place="Ankara" />
                 </View>
                 <View style={style.selectTicketView}>
-                    <SelectTicketButton
-                        title='Nereden'
-                        placeHolder="Lütfen İl veya İlçe Seçiniz"
-                    />
-                    <SelectTicketButton
-                        title='Nereye'
-                        placeHolder="Lütfen İl veya İlçe Seçiniz"
-                    />
+
+                    <CityDropdown title='Nereden' />
+                    <CityDropdown title='Nereye' />
                     <View style={style.changeTicketIconView}>
                         <Icon
                             name="swap-vertical"

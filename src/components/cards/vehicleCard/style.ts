@@ -5,7 +5,6 @@ export default StyleSheet.create({
     container: {
         paddingHorizontal: 17,
         paddingVertical: 10,
-        alignSelf: "flex-start",
         alignItems: "center",
         borderRadius: 5
     },

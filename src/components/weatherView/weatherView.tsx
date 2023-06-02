@@ -16,13 +16,19 @@ export const WeatherView: FC<IWeather> = ({ title, place }) => {
             <Text style={style.weatherHeat}>
                 8°
             </Text>
-            <Text>
+            <Text
+                numberOfLines={1}
+                style={style.cityText}>
                 {place},{" "}
-                <Text>
+                <Text
+                    style={style.countryText}>
                     TÜRKİYE
                 </Text>
             </Text>
-            <Image source={Sun} style={{ width: 60, height: 60, position: "absolute", right: 10, top: 10 }} />
+            <Image
+                source={Sun}
+                style={style.image}
+            />
         </View>
     )
 }

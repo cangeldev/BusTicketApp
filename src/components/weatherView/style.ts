@@ -8,7 +8,8 @@ export default StyleSheet.create({
         marginHorizontal: 10,
         padding: 10,
         borderRadius: 10,
-        minWidth:150,
+        width: 170,
+
     },
     title: {
         position: "absolute",
@@ -21,5 +22,20 @@ export default StyleSheet.create({
     weatherHeat: {
         fontSize: 50
     },
-
+    cityText: {
+        overflow: "hidden",
+        fontSize:13
+    },
+    countryText: {
+        color: colors.black,
+        fontWeight:"bold",
+        fontSize:14
+    },
+    image: {
+        width: 60,
+        height: 60,
+        position: "absolute",
+        right: 10,
+        top: 10
+    }
 })

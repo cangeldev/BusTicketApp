@@ -43,6 +43,7 @@ export default StyleSheet.create({
         backgroundColor: "#eff3f2"
     },
     selectTicketView: {
+        marginTop: 10,
         paddingVertical: 15,
         justifyContent: "center"
     },
@@ -82,17 +83,17 @@ export default StyleSheet.create({
     weatherConteiner: {
         flexDirection: "row",
         marginTop: 20,
-        marginHorizontal:20,
+        marginHorizontal:5,
         justifyContent: "space-around",
     },
-    weatherTitle:{
-        marginHorizontal:25,
-        fontSize:16,
-        fontWeight:"bold",
-        marginVertical:10,
-        color:colors.black,
-        textAlign:"center"
+    weatherTitle: {
+        marginHorizontal: 25,
+        fontSize: 16,
+        fontWeight: "bold",
+        marginVertical: 10,
+        color: colors.black,
+        textAlign: "center"
     }
 
-   
+
 })
