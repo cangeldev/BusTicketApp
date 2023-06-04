@@ -3,3 +3,17 @@ export const Facebook = require("./images/facebook.png");
 export const Instagram = require("./images/instagram.png");
 export const BusLottie = require("./images/bus.json")
 export const Sun = require("./images/sun.png")
+export const Pamukkale = require("./images/pamukkale.png")
+export const Lider = require("./images/lider.png")
+export const Selcuk = require("./images/selcuk.png")
+export const Yeniaksaray = require("./images/yeniaksaray.png")
+export const Kamilkoc = require("./images/kamilkoc.png")
+export const Vib = require("./images/vib.png")
+export const Metro = require("./images/metro.png")
+export const Efetur = require("./images/efetur.png")
+export const Duzceguven = require("./images/duzceguven.png")
+export const Istanbul = require("./images/istanbul.png")
+export const Aliosmanulusoy = require("./images/aliosmanulusoy.png")
+export const Varan = require("./images/varan.png")
+export const Seat = require("./images/seat.png")
+

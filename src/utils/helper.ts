@@ -1,4 +1,20 @@
-import { Facebook, Google, Instagram } from "../assets";
+import {
+    Aliosmanulusoy,
+    Duzceguven,
+    Efetur,
+    Facebook,
+    Google,
+    Instagram,
+    Istanbul,
+    Kamilkoc,
+    Lider,
+    Metro,
+    Pamukkale,
+    Selcuk,
+    Varan,
+    Vib,
+    Yeniaksaray
+} from "../assets";
 
 export const AnotherLoginList = [
     { id: 1, value: Google },
@@ -12,6 +28,22 @@ export const VehicleList = [
     { id: 3, vehicle: "car", title: "Araba" },
     { id: 4, vehicle: "bed", title: "Otel" },
     { id: 5, vehicle: "ship", title: "Feribot" }
+]
+export const BusList = [
+    { id: 1, company: Kamilkoc, price: 150, time: "00:00", duration: "1s 55dk" },
+    { id: 2, company: Metro, price: 170, time: "01:30", duration: "2s 30dk" },
+    { id: 3, company: Duzceguven, price: 100, time: "02:15", duration: "1s 30dk" },
+    { id: 4, company: Efetur, price: 200, time: "03:10", duration: "2s 45dk" },
+    { id: 5, company: Aliosmanulusoy, price: 190, time: "05:00", duration: "2s 10dk" },
+    { id: 6, company: Istanbul, price: 130, time: "07:30", duration: "1s 30dk" },
+    { id: 7, company: Varan, price: 160, time: "10:00", duration: "1s 50dk" },
+    { id: 8, company: Vib, price: 125, time: "12:00", duration: "2s 15dk" },
+    { id: 9, company: Duzceguven, price: 130, time: "14:15", duration: "1s 50dk" },
+    { id: 10, company: Yeniaksaray, price: 210, time: "16:00", duration: "2s 15dk" },
+    { id: 11, company: Selcuk, price: 190, time: "18:30", duration: "2s 30dk" },
+    { id: 12, company: Lider, price: 100, time: "21:45", duration: "1s 50dk" },
+    { id: 13, company: Pamukkale, price: 120, time: "23:00", duration: "2s 30dk" },
+
 ]
 
 export const CityList = [
