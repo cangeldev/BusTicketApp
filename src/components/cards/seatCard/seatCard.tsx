@@ -1,20 +1,21 @@
 import { View, Text, TouchableOpacity, ImageBackground, Modal, TouchableWithoutFeedback, Image } from 'react-native'
 import React, { FC, useState } from 'react'
-import { EmptySeat, Female, Male, SelectSeat } from '../../../assets'
+import { EmptySeat, Female, FemaleSeat, Male, MaleSeat, SelectSeat } from '../../../assets'
 import style from './style'
 import { CustomButton } from '../../customButton'
 
 interface ISeatCard {
     value: number,
-    id: number
+    id: number,
+    status: string,
+    position?: string
 }
 
-export const SeatCard: FC<ISeatCard> = ({ value, id }) => {
-    const hideValues = [2, 3, 7, 8, 12, 13, 17, 18, 22, 23, 27, 28, 29, 30, 32, 33, 37, 38, 42, 43];
+export const SeatCard: FC<ISeatCard> = ({ value, id, status, position }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
 
-    if (hideValues.includes(id)) {
+    if (status == "passive") {
         return <View style={style.emptyView} />;
     }
 
@@ -38,12 +39,18 @@ export const SeatCard: FC<ISeatCard> = ({ value, id }) => {
         if (selectedOption === 'male' || selectedOption === 'female') {
             return SelectSeat;
         } else {
-            return EmptySeat;
+            if (position === "female")
+                return FemaleSeat
+            else if (position === "male")
+                return MaleSeat
+            else
+                return EmptySeat
         }
     };
 
     return (
         <TouchableOpacity
+            disabled={position === "male" || position === "female" ? true : false}
             onPress={handlePress}
             style={style.button}>
             <ImageBackground

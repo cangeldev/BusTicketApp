@@ -14,7 +14,7 @@ export const SelectSeatPage = () => {
 
     const renderSeat =
         ({ item }: any) =>
-            <SeatCard value={item.value} id={item.id} />
+            <SeatCard value={item.value} id={item.id} status={item.status} position={item.position} />
 
     const renderSeparator = () => {
         return <Text style={style.seperator}>
@@ -51,7 +51,7 @@ export const SelectSeatPage = () => {
             </View>
             <View style={style.infoSeatView}>
                 <Text style={style.infoSeatViewText}>
-                   Seçtiğiniz Koltuklar :
+                    Seçtiğiniz Koltuklar :
                 </Text>
                 <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />
                 <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />

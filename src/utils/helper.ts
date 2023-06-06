@@ -142,153 +142,303 @@ export const CityList = [
 
 export const SeatList = [
     {
-        "id": 1, "value": 1, "status": "active"
+        "id": 1,
+        "value": 1,
+        "status": "active",
+        "position": "male"
     },
     {
-        "id": 2, "value": 0, "status": "active"
+        "id": 2,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 3, "value": 0, "status": "active"
+        "id": 3,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 4, "value": 2, "status": "active"
+        "id": 4,
+        "value": 2,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 5, "value": 3, "status": "active"
+        "id": 5,
+        "value": 3,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 6, "value": 4, "status": "active"
+        "id": 6,
+        "value": 4,
+        "status": "active",
+        "position": "close"
     },
     {
-        "id": 7, "value": 0, "status": "active"
+        "id": 7,
+        "value": 0,
+        "status": "passive",
+        "position": "close"
     },
     {
-        "id": 8, "value": 0, "status": "active"
+        "id": 8,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 9, "value": 5, "status": "active"
+        "id": 9,
+        "value": 5,
+        "status": "active",
+        "position": "close"
     },
     {
-        "id": 10, "value": 6, "status": "active"
+        "id": 10,
+        "value": 6,
+        "status": "active",
+        "position": "male"
     },
     {
-        "id": 11, "value": 7, "status": "active"
+        "id": 11,
+        "value": 7,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 12, "value": 0, "status": "active"
+        "id": 12,
+        "value": 0,
+        "status": "passive",
+        "position": "close"
     },
     {
-        "id": 13, "value": 0, "status": "active"
+        "id": 13,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 14, "value": 8, "status": "active"
+        "id": 14,
+        "value": 8,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 15, "value": 9, "status": "active"
+        "id": 15,
+        "value": 9,
+        "status": "active",
+        "position": "male"
     },
     {
-        "id": 16, "value": 10, "status": "active"
+        "id": 16,
+        "value": 10,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 17, "value": 0, "status": "active"
+        "id": 17,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 18, "value": 0, "status": "active"
+        "id": 18,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 19, "value": 11, "status": "active"
+        "id": 19,
+        "value": 11,
+        "status": "active",
+        "position": "active"
     },
     {
-        "id": 20, "value": 12, "status": "active"
+        "id": 20,
+        "value": 12,
+        "status": "active",
+        "position": "active"
     },
     {
-        "id": 21, "value": 13, "status": "active"
+        "id": 21,
+        "value": 13,
+        "status": "active",
+        "position": "close"
     },
     {
-        "id": 22, "value": 0, "status": "active"
+        "id": 22,
+        "value": 0,
+        "status": "passive",
+        "position": "close"
     },
     {
-        "id": 23, "value": 0, "status": "active"
+        "id": 23,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 24, "value": 14, "status": "active"
+        "id": 24,
+        "value": 14,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 25, "value": 15, "status": "active"
+        "id": 25,
+        "value": 15,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 26, "value": 16, "status": "active"
+        "id": 26,
+        "value": 16,
+        "status": "active",
+        "position": "male"
     },
     {
-        "id": 27, "value": 0, "status": "active"
+        "id": 27,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 28, "value": 0, "status": "active"
+        "id": 28,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 29, "value": 0, "status": "active"
+        "id": 29,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 30, "value": 0, "status": "active"
+        "id": 30,
+        "value": 0,
+        "status": "passive",
+        "position": "close"
     },
     {
-        "id": 31, "value": 17, "status": "active"
+        "id": 31,
+        "value": 17,
+        "status": "active",
+        "position": "active"
     },
     {
-        "id": 32, "value": 0, "status": "active"
+        "id": 32,
+        "value": 0,
+        "status": "passive",
+        "position": "close"
     },
     {
-        "id": 33, "value": 0, "status": "active"
+        "id": 33,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 34, "value": 18, "status": "active"
+        "id": 34,
+        "value": 18,
+        "status": "active",
+        "position": "male"
     },
     {
-        "id": 35, "value": 19, "status": "active"
+        "id": 35,
+        "value": 19,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 36, "value": 20, "status": "active"
+        "id": 36,
+        "value": 20,
+        "status": "active",
+        "position": "close"
     },
     {
-        "id": 37, "value": 0, "status": "active"
+        "id": 37,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 38, "value": 0, "status": "active"
+        "id": 38,
+        "value": 0,
+        "status": "passive",
+        "position": "close"
     },
     {
-        "id": 39, "value": 21, "status": "active"
+        "id": 39,
+        "value": 21,
+        "status": "active",
+        "position": "close"
     },
     {
-        "id": 40, "value": 22, "status": "active"
+        "id": 40,
+        "value": 22,
+        "status": "active",
+        "position": "active"
     },
     {
-        "id": 41, "value": 23, "status": "active"
+        "id": 41,
+        "value": 23,
+        "status": "active",
+        "position": "male"
     },
     {
-        "id": 42, "value": 0, "status": "active"
+        "id": 42,
+        "value": 0,
+        "status": "passive",
+        "position": "active"
     },
     {
-        "id": 43, "value": 0, "status": "active"
+        "id": 43,
+        "value": 0,
+        "status": "passive",
+        "position": "close"
     },
     {
-        "id": 44, "value": 24, "status": "active"
+        "id": 44,
+        "value": 24,
+        "status": "active",
+        "position": "male"
     },
     {
-        "id": 45, "value": 25, "status": "active"
+        "id": 45,
+        "value": 25,
+        "status": "active",
+        "position": "male"
     },
     {
-        "id": 46, "value": 26, "status": "active"
+        "id": 46,
+        "value": 26,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 47, "value": 27, "status": "active"
+        "id": 47,
+        "value": 27,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 48, "value": 28, "status": "active"
+        "id": 48,
+        "value": 28,
+        "status": "active",
+        "position": "female"
     },
     {
-        "id": 49, "value": 29, "status": "active"
+        "id": 49,
+        "value": 29,
+        "status": "active",
+        "position": "close"
     },
     {
-        "id": 50, "value": 30, "status": "active"
+        "id": 50,
+        "value": 30,
+        "status": "active",
+        "position": "male"
     }
-]
+];
