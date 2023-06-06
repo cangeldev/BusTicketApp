@@ -1,10 +1,10 @@
-import { View, Text, StatusBar, FlatList } from 'react-native'
+import { View, StatusBar, FlatList } from 'react-native'
 import React from 'react'
 import colors from '../../assets/colors/colors'
 import style from './style'
-import Icon from 'react-native-vector-icons/AntDesign'
 import { BusCard } from '../../components/cards/busCard'
 import { BusList } from '../../utils/helper'
+import { CustomHeader } from '../../components'
 export const BusListPage = () => {
 
     const renderBusList = ({ item }: any) =>
@@ -20,29 +20,7 @@ export const BusListPage = () => {
                 backgroundColor={colors.buttonBackground}
                 barStyle={"light-content"}
             />
-            <View style={style.header}>
-                <Icon name="left"
-                    size={22}
-                    color={colors.white}
-                    style={style.backIcon}
-                />
-                <View style={style.cityView}>
-                    <Text style={style.city}>
-                        İstanbul
-                    </Text>
-                    <Icon name="arrowright"
-                        size={20}
-                        color={colors.white}
-                        style={style.rightIcon}
-                    />
-                    <Text style={style.city}>
-                        Ankara
-                    </Text>
-                </View>
-                <Text style={style.dateText}>
-                    2 Haziran Cuma
-                </Text>
-            </View>
+            <CustomHeader />
             <View
                 style={style.busListView}>
                 <FlatList data={BusList}

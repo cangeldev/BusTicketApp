@@ -1,2 +1,5 @@
 export { VehicleCard } from "./vehicleCard/index"
 export { AnotherLoginCard } from "./anotherLoginCard/index"
+export { BusCard } from "./busCard/index"
+export { SeatInfoCard } from "./seatInfoCard/index"
+export { SeatCard } from "./seatCard/index"

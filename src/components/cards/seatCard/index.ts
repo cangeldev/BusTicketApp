@@ -1,0 +1,1 @@
+export { SeatCard } from "./seatCard"
