@@ -21,4 +21,6 @@ export const EmptySeat = require("./images/emptySeat.png")
 export const SelectSeat = require("./images/selectSeat.png")
 export const MaleSeat = require("./images/maleSeat.png")
 export const FemaleSeat = require("./images/femaleSeat.png")
+export const Male = require("./images/male.png")
+export const Female = require("./images/female.png")
 

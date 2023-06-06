@@ -3,12 +3,15 @@ import React, { FC } from 'react'
 import style from './style'
 
 interface ICustomButton {
-    title: string
+    title: string,
+    onClick?: () => void;
 }
 
-export const CustomButton: FC<ICustomButton> = ({ title }) => {
+export const CustomButton: FC<ICustomButton> = ({ title, onClick }) => {
     return (
-        <TouchableOpacity style={style.container}>
+        <TouchableOpacity
+            onPress={onClick}
+            style={style.container}>
             <Text style={style.txt}>
                 {title}
             </Text>

@@ -51,7 +51,7 @@ export const SelectSeatPage = () => {
             </View>
             <View style={style.infoSeatView}>
                 <Text style={style.infoSeatViewText}>
-                    En fazla 4 koltuk seçebilirsiniz :
+                   Seçtiğiniz Koltuklar :
                 </Text>
                 <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />
                 <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />
