@@ -5,9 +5,9 @@ import { BusListPage, HomePage, SelectSeatPage } from '../pages'
 export const Container = () => {
     return (
         <View style={{ flex: 1 }}>
-            {/* <HomePage /> */}
+             <HomePage /> 
             {/* <BusListPage /> */}
-            <SelectSeatPage />
+            {/* <SelectSeatPage /> */}
         </View>
     )
 }

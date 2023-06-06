@@ -7,7 +7,7 @@ import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
 export const DateSelect = () => {
     const [date, setDate] = useState(new Date())
     const [open, setOpen] = useState(false)
-
+    const today = new Date()
     const formatDate = (date: any) => {
         const day = date.getDate();
         return day.toString();
@@ -52,6 +52,7 @@ export const DateSelect = () => {
                 </View>
             </TouchableOpacity>
             <DatePicker
+                minimumDate={today}
                 cancelText='İptal'
                 confirmText='Onayla'
                 title={"Lütfen Tarih Seçiniz:"}
