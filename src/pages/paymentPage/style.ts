@@ -21,9 +21,7 @@ export default StyleSheet.create({
         borderRadius: 10,
         overflow: "hidden",
     },
-    inputView: {
 
-    },
     infoView: {
         flex: 1,
         flexDirection: "row",
@@ -66,8 +64,8 @@ export default StyleSheet.create({
         flexDirection: "row",
         position: "absolute",
         top: 80,
-        right: 35,
-        alignItems: "center"
+        left: 250,
+        alignItems: "center",
     },
     validThruTitle: {
         fontSize: 5,
