@@ -23,4 +23,6 @@ export const MaleSeat = require("./images/maleSeat.png")
 export const FemaleSeat = require("./images/femaleSeat.png")
 export const Male = require("./images/male.png")
 export const Female = require("./images/female.png")
+export const CardBack = require("./images/card-back.png")
+export const CardFront = require("./images/card-front.png")
 

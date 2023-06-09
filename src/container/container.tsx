@@ -1,13 +1,14 @@
 import { View } from 'react-native'
 import React from 'react'
-import { BusListPage, HomePage, SelectSeatPage } from '../pages'
+import { BusListPage, HomePage, PaymentPage, SelectSeatPage } from '../pages'
 
 export const Container = () => {
     return (
         <View style={{ flex: 1 }}>
-             <HomePage /> 
+            {/* <HomePage /> */}
             {/* <BusListPage /> */}
             {/* <SelectSeatPage /> */}
+            <PaymentPage />
         </View>
     )
 }
