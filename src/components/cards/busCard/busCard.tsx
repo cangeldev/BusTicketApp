@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import { View, Text, Image, TouchableOpacity } from 'react-native'
-import { Seat } from '../../../assets'
 import style from './style'
 import Icon from 'react-native-vector-icons/AntDesign'
-import colors from '../../../assets/colors/colors'
 import { useNavigation } from '@react-navigation/native'
+import colors from 'assets/colors/colors'
+import { Seat } from 'assets/index'
 
 interface IBusCard {
     price: number

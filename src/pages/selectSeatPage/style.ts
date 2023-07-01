@@ -1,5 +1,5 @@
+import colors from 'assets/colors/colors'
 import { StyleSheet } from 'react-native'
-import colors from '../../assets/colors/colors'
 
 export default StyleSheet.create({
     container: {
@@ -25,8 +25,8 @@ export default StyleSheet.create({
         width: "70%",
         alignSelf: "center",
         height: "70%",
-        
-        justifyContent:"center"
+
+        justifyContent: "center"
     },
     infoSeatView: {
         flexDirection: "row",

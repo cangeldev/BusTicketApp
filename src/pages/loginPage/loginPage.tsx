@@ -2,13 +2,13 @@ import { View, Text, FlatList, StatusBar, BackHandler } from 'react-native'
 import React from 'react'
 import style from './style'
 import { CustomButton, CustomInput, Divider } from '../../components'
-import { BusLottie } from '../../assets'
-import { AnotherLoginList } from '../../utils/helper'
-import { AnotherLoginCard } from '../../components/cards'
 import Lottie from 'lottie-react-native'
-import colors from '../../assets/colors/colors'
 import Icon from 'react-native-vector-icons/AntDesign';
 import { useNavigation } from '@react-navigation/native'
+import { AnotherLoginCard } from 'components/cards'
+import { AnotherLoginList } from 'utils/helper'
+import { BusLottie } from 'assets/index'
+import colors from 'assets/colors/colors'
 
 export const LoginPage = () => {
     const navigation = useNavigation<any>()

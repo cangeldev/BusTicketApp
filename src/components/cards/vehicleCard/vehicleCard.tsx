@@ -2,7 +2,7 @@ import { Text, TouchableOpacity } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
 import Icon from 'react-native-vector-icons/FontAwesome5'
-import colors from '../../../assets/colors/colors';
+import colors from 'assets/colors/colors'
 
 interface IVehicleCard {
     title: string,

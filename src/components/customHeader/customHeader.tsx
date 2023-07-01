@@ -1,8 +1,8 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 import style from './style'
-import colors from '../../assets/colors/colors'
 import Icon from 'react-native-vector-icons/AntDesign'
+import colors from 'assets/colors/colors'
 export const CustomHeader = () => {
     return (
         <View style={style.container}>

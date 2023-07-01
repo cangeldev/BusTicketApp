@@ -2,11 +2,11 @@ import { View, Text, FlatList, StatusBar } from 'react-native'
 import React from 'react'
 import style from './style'
 import Icon from 'react-native-vector-icons/Ionicons'
-import { VehicleCard } from '../../components/cards'
-import { VehicleList } from '../../utils/helper'
-import colors from '../../assets/colors/colors'
 import { CustomButton, CityDropdown, WeatherView, DateSelect } from '../../components'
 import { useNavigation } from '@react-navigation/native'
+import { VehicleCard } from 'components/cards'
+import { VehicleList } from 'utils/helper'
+import colors from 'assets/colors/colors'
 
 export const HomePage = () => {
 

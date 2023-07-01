@@ -2,8 +2,8 @@ import { View, Text } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
 import SelectDropdown from 'react-native-select-dropdown'
-import { CityList } from '../../utils/helper'
 import Icon from 'react-native-vector-icons/FontAwesome5'
+import { CityList } from 'utils/helper'
 
 interface ICityDropDown {
     title: string

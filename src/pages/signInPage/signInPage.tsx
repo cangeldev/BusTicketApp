@@ -2,11 +2,11 @@ import { View, Text, StatusBar } from 'react-native'
 import React from 'react'
 import style from './style'
 import { CustomButton, CustomInput } from '../../components'
-import { BusLottie } from '../../assets'
 import Lottie from 'lottie-react-native'
-import colors from '../../assets/colors/colors'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { useNavigation } from '@react-navigation/native'
+import colors from 'assets/colors/colors'
+import { BusLottie } from 'assets/index'
 
 export const SignInPage = () => {
     const navigation = useNavigation<any>()

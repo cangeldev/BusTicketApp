@@ -1,10 +1,10 @@
 import React, { useState, useRef } from 'react'
 import { View, Text, TouchableOpacity, StatusBar, ImageBackground } from 'react-native'
 import * as Animatable from 'react-native-animatable'
-import { CardBack, CardFront } from '../../assets'
-import colors from '../../assets/colors/colors'
 import style from './style'
 import { CustomButton, CustomInput, CustomTextView } from '../../components'
+import colors from 'assets/colors/colors'
+import { CardBack, CardFront } from 'assets/index'
 
 export const PaymentPage = () => {
     const [isFront, setIsFront] = useState(true)

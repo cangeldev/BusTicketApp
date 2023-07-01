@@ -1,12 +1,12 @@
 import { View, Text, Image, StatusBar, FlatList, ImageBackground } from 'react-native'
 import React from 'react'
-import { BackGroundImage, EmptySeat } from '../../assets'
 import style from './style'
-import colors from '../../assets/colors/colors'
 import { CustomButton, CustomHeader } from '../../components'
-import { SeatCard, SeatInfoCard } from '../../components/cards'
-import { SeatInfoList, SeatList } from '../../utils/helper'
 import { useNavigation } from '@react-navigation/native'
+import { SeatInfoList, SeatList } from 'utils/helper'
+import { SeatCard, SeatInfoCard } from 'components/cards'
+import colors from 'assets/colors/colors'
+import { BackGroundImage, EmptySeat } from 'assets/index'
 
 export const SelectSeatPage = () => {
 

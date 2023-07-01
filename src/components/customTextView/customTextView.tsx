@@ -1,6 +1,5 @@
 import { View, Text } from 'react-native'
 import React, { FC } from 'react'
-import colors from '../../assets/colors/colors'
 import style from './style'
 
 interface ICustomTextView {

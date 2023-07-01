@@ -1,7 +1,7 @@
 import { View, Text, Image } from 'react-native'
 import React, { FC } from 'react'
 import style from './style'
-import { Sun } from '../../assets'
+import { Sun } from 'assets/index'
 
 interface IWeather {
     title: string,

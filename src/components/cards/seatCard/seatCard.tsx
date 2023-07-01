@@ -1,8 +1,8 @@
 import { View, Text, TouchableOpacity, ImageBackground, Modal, TouchableWithoutFeedback, Image } from 'react-native'
 import React, { FC, useState } from 'react'
-import { EmptySeat, Female, FemaleSeat, Male, MaleSeat, SelectSeat } from '../../../assets'
 import style from './style'
-import { CustomButton } from '../../customButton'
+import { EmptySeat, Female, FemaleSeat, Male, MaleSeat, SelectSeat } from 'assets/index'
+import { CustomButton } from 'components/customButton'
 
 interface ISeatCard {
     value: number,

@@ -1,10 +1,11 @@
 import { View, StatusBar, FlatList } from 'react-native'
 import React from 'react'
-import colors from '../../assets/colors/colors'
 import style from './style'
-import { BusCard } from '../../components/cards/busCard'
-import { BusList } from '../../utils/helper'
-import { CustomHeader } from '../../components'
+import colors from 'assets/colors/colors'
+import { BusList } from 'utils/helper'
+import { BusCard } from 'components/cards'
+import { CustomHeader } from 'components/customHeader'
+
 export const BusListPage = () => {
 
     const renderBusList = ({ item }: any) =>
