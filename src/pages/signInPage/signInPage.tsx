@@ -5,9 +5,14 @@ import { CustomButton, CustomInput } from '../../components'
 import { BusLottie } from '../../assets'
 import Lottie from 'lottie-react-native'
 import colors from '../../assets/colors/colors'
-import Icon from 'react-native-vector-icons/AntDesign';
+import Icon from 'react-native-vector-icons/AntDesign'
+import { useNavigation } from '@react-navigation/native'
 
 export const SignInPage = () => {
+    const navigation = useNavigation<any>()
+    const handleBack = () => {
+        navigation.navigate("LoginPage")
+    }
     return (
         <View style={style.container}>
             <StatusBar
@@ -19,6 +24,7 @@ export const SignInPage = () => {
                     size={30}
                     color={colors.white}
                     style={style.backIcon}
+                    onPress={handleBack}
                 />
                 <Text style={style.title}>
                     BiletFırsatı
@@ -47,11 +53,16 @@ export const SignInPage = () => {
                     placeHolder='********'
                 />
                 <View style={style.buttonView}>
-                    <CustomButton title='Sign in' />
+                    <CustomButton
+                        title='Sign in'
+                        onClick={handleBack}
+                    />
                 </View>
                 <Text style={style.haveAccountTxt}>
                     Already have an account ?{' '}
-                    <Text style={style.signUpTxt}>
+                    <Text
+                        onPress={handleBack}
+                        style={style.signUpTxt}>
                         Login
                     </Text>
                 </Text>

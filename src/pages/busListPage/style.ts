@@ -5,7 +5,7 @@ export default StyleSheet.create({
     container: {
         backgroundColor: colors.white,
         flex: 1,
-        marginBottom: 80
+        paddingBottom: 85
     },
     busListView: {
         marginVertical: 10

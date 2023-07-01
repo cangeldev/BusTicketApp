@@ -1,4 +1,4 @@
-import { View, Text, FlatList, StatusBar } from 'react-native'
+import { View, Text, FlatList, StatusBar, BackHandler } from 'react-native'
 import React from 'react'
 import style from './style'
 import { CustomButton, CustomInput, Divider } from '../../components'
@@ -8,8 +8,22 @@ import { AnotherLoginCard } from '../../components/cards'
 import Lottie from 'lottie-react-native'
 import colors from '../../assets/colors/colors'
 import Icon from 'react-native-vector-icons/AntDesign';
+import { useNavigation } from '@react-navigation/native'
+
 export const LoginPage = () => {
-    const render = ({ item }: any) => <AnotherLoginCard image={item.value} />
+    const navigation = useNavigation<any>()
+    const render = ({ item }: any) =>
+        <AnotherLoginCard image={item.value}
+        />
+    const handleExit = () => {
+        BackHandler.exitApp()
+    }
+    const handleLogin = () => {
+        navigation.navigate("HomePage")
+    }
+    const handleSignIn = () => {
+        navigation.navigate("SignInPage")
+    }
 
     return (
         <View style={style.container}>
@@ -18,7 +32,12 @@ export const LoginPage = () => {
                 barStyle={"light-content"}
             />
             <View style={style.titleView}>
-                <Icon name="arrowleft" size={30} color={colors.white} style={style.backIcon} />
+                <Icon name="arrowleft"
+                    size={30}
+                    color={colors.white}
+                    style={style.backIcon}
+                    onPress={handleExit}
+                />
                 <Text style={style.title}>
                     BiletFırsatı
                     <Text style={style.titleExt}>
@@ -45,7 +64,9 @@ export const LoginPage = () => {
                     Forgot Password?
                 </Text>
                 <View style={style.buttonView}>
-                    <CustomButton title='Log in' />
+                    <CustomButton title='Log in'
+                        onClick={handleLogin}
+                    />
                 </View>
                 <Divider />
                 <View style={style.anotherLoginView}>
@@ -56,7 +77,9 @@ export const LoginPage = () => {
                 </View>
                 <Text style={style.haveAccountTxt}>
                     Don't have an account?{' '}
-                    <Text style={style.signUpTxt}>
+                    <Text
+                        onPress={handleSignIn}
+                        style={style.signUpTxt}>
                         Sign up
                     </Text>
                 </Text>

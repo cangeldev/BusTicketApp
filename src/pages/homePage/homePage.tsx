@@ -6,10 +6,12 @@ import { VehicleCard } from '../../components/cards'
 import { VehicleList } from '../../utils/helper'
 import colors from '../../assets/colors/colors'
 import { CustomButton, CityDropdown, WeatherView, DateSelect } from '../../components'
+import { useNavigation } from '@react-navigation/native'
 
 export const HomePage = () => {
 
-    const [selectedItemId, setSelectedItemId] = React.useState(1);
+    const navigation = useNavigation<any>()
+    const [selectedItemId, setSelectedItemId] = React.useState(1)
     const render = ({ item }: any) =>
         <VehicleCard
             title={item.title}
@@ -18,6 +20,9 @@ export const HomePage = () => {
             selectedItemId={selectedItemId as any}
             onClick={() => setSelectedItemId(item.id)}
         />
+    const handleButton = () => {
+        navigation.navigate("BusListPage")
+    }
 
     return (
         <View style={style.container}>
@@ -33,7 +38,6 @@ export const HomePage = () => {
                 />
                 <Text style={style.title}>
                     BiletFırsatı
-
                 </Text>
                 <Text style={style.txt}>
                     İyi Yolculuklar!
@@ -61,8 +65,12 @@ export const HomePage = () => {
                     />
                 </View>
                 <View style={style.selectTicketView}>
-                    <CityDropdown title='Kalkış Noktası' />
-                    <CityDropdown title='Varış Noktası' />
+                    <CityDropdown
+                        title='Kalkış Noktası'
+                    />
+                    <CityDropdown
+                        title='Varış Noktası'
+                    />
                     <View style={style.changeTicketIconView}>
                         <Icon
                             name="swap-vertical"
@@ -71,7 +79,10 @@ export const HomePage = () => {
                     </View>
                 </View>
                 <DateSelect />
-                <CustomButton title='Ucuz Bilet Bul' />
+                <CustomButton
+                    title='Ucuz Bilet Bul'
+                    onClick={handleButton}
+                />
             </View>
         </View>
     )

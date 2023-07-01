@@ -6,22 +6,33 @@ import colors from '../../assets/colors/colors'
 import { CustomButton, CustomHeader } from '../../components'
 import { SeatCard, SeatInfoCard } from '../../components/cards'
 import { SeatInfoList, SeatList } from '../../utils/helper'
+import { useNavigation } from '@react-navigation/native'
 
 export const SelectSeatPage = () => {
+
+    const navigation = useNavigation<any>()
+    const handleButton = () => {
+        navigation.navigate("PaymentPage")
+    }
     const render =
         ({ item }: any) =>
-            <SeatInfoCard text={item.text} image={item.image} />
-
+            <SeatInfoCard
+                text={item.text}
+                image={item.image}
+            />
     const renderSeat =
         ({ item }: any) =>
-            <SeatCard value={item.value} id={item.id} status={item.status} position={item.position} />
-
+            <SeatCard
+                value={item.value}
+                id={item.id}
+                status={item.status}
+                position={item.position}
+            />
     const renderSeparator = () => {
         return <Text style={style.seperator}>
             |
         </Text>
     }
-
     return (
         <View style={style.container}>
             <StatusBar
@@ -58,7 +69,10 @@ export const SelectSeatPage = () => {
                 <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />
                 <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />
             </View>
-            <CustomButton title='Onayla' />
+            <CustomButton
+                title='Onayla'
+                onClick={handleButton}
+            />
         </View>
     )
 }

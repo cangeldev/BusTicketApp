@@ -10,7 +10,7 @@ export default StyleSheet.create({
         justifyContent: "center",
         borderRadius: 100,
         backgroundColor: colors.white,
-        marginHorizontal: 4,
+        marginHorizontal: 8,
         marginVertical: 4
     },
     image: {

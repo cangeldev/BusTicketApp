@@ -4,6 +4,7 @@ import { Seat } from '../../../assets'
 import style from './style'
 import Icon from 'react-native-vector-icons/AntDesign'
 import colors from '../../../assets/colors/colors'
+import { useNavigation } from '@react-navigation/native'
 
 interface IBusCard {
     price: number
@@ -13,10 +14,17 @@ interface IBusCard {
 }
 
 export const BusCard: FC<IBusCard> = ({ price, time, duration, image }) => {
+    const navigation = useNavigation<any>()
+    const handleButton = () => {
+        navigation.navigate("SelectSeatPage")
+    }
+
     return (
         <View style={style.container}>
             <TouchableOpacity style={style.button}>
-                <Text style={style.buttonText}>
+                <Text
+                    onPress={handleButton}
+                    style={style.buttonText}>
                     Koltuk Seç
                 </Text>
             </TouchableOpacity>
@@ -56,7 +64,8 @@ export const BusCard: FC<IBusCard> = ({ price, time, duration, image }) => {
                 <Text numberOfLines={1} style={style.city}>
                     İstanbul Otogarı
                 </Text>
-                <Icon name="right"
+                <Icon
+                    name="right"
                     size={14}
                     color={colors.black}
                     style={style.rightIcon}
