@@ -3,7 +3,8 @@ import React, { FC, useState } from 'react'
 import style from './style'
 import { EmptySeat, Female, FemaleSeat, Male, MaleSeat, SelectSeat } from 'assets/index'
 import { CustomButton } from 'components/customButton'
-
+import { useDispatch } from "react-redux"
+import { addToSeat } from 'features/userSlice'
 interface ISeatCard {
     value: number,
     id: number,
@@ -14,7 +15,10 @@ interface ISeatCard {
 export const SeatCard: FC<ISeatCard> = ({ value, id, status, position }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
-
+    const dispatch = useDispatch()
+    const handleDispatch = () => {
+        dispatch(addToSeat(value))
+    };
     if (status == "passive") {
         return <View style={style.emptyView} />;
     }
@@ -25,6 +29,7 @@ export const SeatCard: FC<ISeatCard> = ({ value, id, status, position }) => {
 
     const closeModal = () => {
         setModalVisible(false)
+        handleDispatch()
     };
 
     const handleModalPress = () => {
@@ -91,7 +96,9 @@ export const SeatCard: FC<ISeatCard> = ({ value, id, status, position }) => {
                                 </TouchableOpacity>
                             </View>
                             <CustomButton
-                                onClick={closeModal}
+                                onClick={
+                                    closeModal
+                                }
                                 title='Onayla'
                             />
                         </View>

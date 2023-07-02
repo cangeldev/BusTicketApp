@@ -8,7 +8,8 @@
       "assets/*": ["assets/*"],
       "container/*": ["container/*"],
       "pages/*": ["pages/*"],
-      "utils/*": ["utils/*"]
+      "utils/*": ["utils/*"],
+      "features/*": ["features/*"]
     }
   }
 }

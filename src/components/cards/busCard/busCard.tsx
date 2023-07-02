@@ -5,6 +5,9 @@ import Icon from 'react-native-vector-icons/AntDesign'
 import { useNavigation } from '@react-navigation/native'
 import colors from 'assets/colors/colors'
 import { Seat } from 'assets/index'
+import { useSelector, useDispatch } from "react-redux"
+import { RootState } from 'features/store'
+import { addToHours, addToPrice } from 'features/userSlice'
 
 interface IBusCard {
     price: number
@@ -14,9 +17,14 @@ interface IBusCard {
 }
 
 export const BusCard: FC<IBusCard> = ({ price, time, duration, image }) => {
+    const from = useSelector((state: RootState) => state.users.UserInfo.from)
+    const to = useSelector((state: RootState) => state.users.UserInfo.to)
+    const dispatch = useDispatch()
     const navigation = useNavigation<any>()
     const handleButton = () => {
         navigation.navigate("SelectSeatPage")
+        dispatch(addToHours(time))
+        dispatch(addToPrice(price))
     }
 
     return (
@@ -62,7 +70,7 @@ export const BusCard: FC<IBusCard> = ({ price, time, duration, image }) => {
             </View>
             <View style={style.cityView}>
                 <Text numberOfLines={1} style={style.city}>
-                    İstanbul Otogarı
+                    {from + " Otogarı"}
                 </Text>
                 <Icon
                     name="right"
@@ -71,7 +79,7 @@ export const BusCard: FC<IBusCard> = ({ price, time, duration, image }) => {
                     style={style.rightIcon}
                 />
                 <Text numberOfLines={1} style={style.city}>
-                    Ankara Otogarı
+                    {to + " Otogarı"}
                 </Text>
             </View>
         </View>

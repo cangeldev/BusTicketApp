@@ -9,8 +9,14 @@ import { AnotherLoginCard } from 'components/cards'
 import { AnotherLoginList } from 'utils/helper'
 import { BusLottie } from 'assets/index'
 import colors from 'assets/colors/colors'
+import { useDispatch } from "react-redux"
+import { addEmail, addPassword } from 'features/userSlice'
 
 export const LoginPage = () => {
+    const dispatch = useDispatch()
+    const [email, SetEmail] = React.useState("")
+    const [password, SetPassword] = React.useState("")
+
     const navigation = useNavigation<any>()
     const render = ({ item }: any) =>
         <AnotherLoginCard image={item.value}
@@ -19,7 +25,9 @@ export const LoginPage = () => {
         BackHandler.exitApp()
     }
     const handleLogin = () => {
+        dispatch(addEmail(email))
         navigation.navigate("HomePage")
+    
     }
     const handleSignIn = () => {
         navigation.navigate("SignInPage")
@@ -53,10 +61,12 @@ export const LoginPage = () => {
             />
             <View style={style.contentView}>
                 <CustomInput
+                    changeText={(a) => SetEmail(a)}
                     title='Email:'
                     placeHolder='example@gmail.com'
                 />
                 <CustomInput
+                    changeText={(a) => SetPassword(a)}
                     title='Password:'
                     placeHolder='********'
                 />

@@ -7,11 +7,16 @@ import { useNavigation } from '@react-navigation/native'
 import { VehicleCard } from 'components/cards'
 import { VehicleList } from 'utils/helper'
 import colors from 'assets/colors/colors'
+import { useSelector } from "react-redux"
+import { RootState } from 'features/store'
 
 export const HomePage = () => {
+    const from = useSelector((state: RootState) => state.users.UserInfo.from)
+    const to = useSelector((state: RootState) => state.users.UserInfo.to)
 
     const navigation = useNavigation<any>()
     const [selectedItemId, setSelectedItemId] = React.useState(1)
+
     const render = ({ item }: any) =>
         <VehicleCard
             title={item.title}
@@ -57,11 +62,11 @@ export const HomePage = () => {
                 <View style={style.weatherConteiner}>
                     <WeatherView
                         title=' Nereden'
-                        place="İstanbul"
+                        place={from==""?"İstanbul":from}
                     />
                     <WeatherView
                         title='Nereye'
-                        place="Ankara"
+                        place={to==""?"Ankara":to}
                     />
                 </View>
                 <View style={style.selectTicketView}>

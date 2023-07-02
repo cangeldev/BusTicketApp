@@ -5,7 +5,8 @@ import style from './style'
 import { CustomButton, CustomInput, CustomTextView } from '../../components'
 import colors from 'assets/colors/colors'
 import { CardBack, CardFront } from 'assets/index'
-
+import { useSelector } from "react-redux"
+import { RootState } from 'features/store'
 export const PaymentPage = () => {
     const [isFront, setIsFront] = useState(true)
     const [name, setName] = useState("")
@@ -13,7 +14,12 @@ export const PaymentPage = () => {
     const [cvcNo, setCvcNo] = useState("")
     const [validThruNo, setValidThruNo] = useState("")
     const flipRef = useRef(null)
-
+    const from = useSelector((state: RootState) => state.users.UserInfo.from)
+    const to = useSelector((state: RootState) => state.users.UserInfo.to)
+    const date = useSelector((state: RootState) => state.users.UserInfo.date)
+    const hours = useSelector((state: RootState) => state.users.UserInfo.hours)
+    const price = useSelector((state: RootState) => state.users.UserInfo.price)
+    const seat = useSelector((state: RootState) => state.users.UserInfo.seat)
     const toggleCard = () => {
         setIsFront(!isFront)
         if (flipRef.current) {
@@ -91,21 +97,22 @@ export const PaymentPage = () => {
                 <View style={style.infoInnerView}>
                     <CustomTextView
                         title='Kalkış'
-                        text='Düzce Otogarı'
+                        text={from + " Otogarı"}
                     />
                     <CustomTextView
                         title='Hareket Zamanı'
-                        text='7 haziran Çarşamba 02:25 '
+                        text={date + '\n' + hours}
                     />
                 </View>
                 <View style={[style.infoInnerView, { paddingLeft: 20 }]}>
                     <CustomTextView
                         title='Varış'
-                        text='Gebze Otogarı'
+                        text={to + " Otogarı"}
                     />
                     <CustomTextView
                         title='Koltuk'
-                        text='15'
+                        //text={price.toString()}
+                        text={seat+" "}
                     />
                 </View>
             </View>

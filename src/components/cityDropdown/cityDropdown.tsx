@@ -4,16 +4,18 @@ import style from './style'
 import SelectDropdown from 'react-native-select-dropdown'
 import Icon from 'react-native-vector-icons/FontAwesome5'
 import { CityList } from 'utils/helper'
+import { useDispatch } from "react-redux"
+import { addFromCity, addToCity } from 'features/userSlice'
 
 interface ICityDropDown {
     title: string
 }
 
 export const CityDropdown: FC<ICityDropDown> = ({ title }) => {
+    const dispatch = useDispatch()
     return (
         <View style={style.container}>
             <SelectDropdown
-                //defaultValue={"Adana"}
                 showsVerticalScrollIndicator={false}
                 defaultButtonText='Lütfen İl veya İlçe Seçiniz'
                 dropdownStyle={style.dropdownStyle}
@@ -33,14 +35,11 @@ export const CityDropdown: FC<ICityDropDown> = ({ title }) => {
                 onSelect={(selectedItem, index) => {
                     console.log(selectedItem, index)
                 }}
-                buttonTextAfterSelection={(selectedItem, index) => {
-                    // text represented after item is selected
-                    // if data array is an array of objects then return selectedItem.property to render after item is selected
+                buttonTextAfterSelection={(selectedItem) => {
+                    title == "Kalkış Noktası" ? dispatch(addFromCity(selectedItem)) : dispatch(addToCity(selectedItem))
                     return selectedItem
                 }}
                 rowTextForSelection={(item, index) => {
-                    // text represented for each item in dropdown
-                    // if data array is an array of objects then return item.property to represent item in dropdown
                     return item
                 }}
             />
