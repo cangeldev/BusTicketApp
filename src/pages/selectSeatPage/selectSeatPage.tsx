@@ -6,9 +6,12 @@ import { useNavigation } from '@react-navigation/native'
 import { SeatInfoList, SeatList } from 'utils/helper'
 import { SeatCard, SeatInfoCard } from 'components/cards'
 import colors from 'assets/colors/colors'
-import { BackGroundImage, EmptySeat } from 'assets/index'
+import { BackGroundImage, SelectSeat } from 'assets/index'
+import { useSelector } from "react-redux"
+import { RootState } from 'features/store'
 
 export const SelectSeatPage = () => {
+    const { seat, price } = useSelector((state: RootState) => state.users.UserInfo)
 
     const navigation = useNavigation<any>()
     const handleButton = () => {
@@ -20,6 +23,16 @@ export const SelectSeatPage = () => {
                 text={item.text}
                 image={item.image}
             />
+    const selectSeatCard =
+        ({ item }: any) =>
+            <View>
+                <ImageBackground source={SelectSeat} style={style.seatBackground} >
+                    <Text style={style.selectSeatText}>
+                        {item}
+                    </Text>
+                </ImageBackground>
+
+            </View>
     const renderSeat =
         ({ item }: any) =>
             <SeatCard
@@ -60,15 +73,24 @@ export const SelectSeatPage = () => {
                         style={{ marginTop: 85 }} />
                 </ImageBackground>
             </View>
-            <View style={style.infoSeatView}>
-                <Text style={style.infoSeatViewText}>
-                    Seçtiğiniz Koltuklar :
-                </Text>
-                <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />
-                <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />
-                <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />
-                <Image source={EmptySeat} style={{ width: 24, height: 24, resizeMode: "center", marginRight: 5 }} />
-            </View>
+            {
+                seat == 0 ? null :
+                    <View style={style.infoSeatView}>
+                        <Text style={style.infoSeatViewText}>
+                            Seçtiğiniz Koltuklar :
+                        </Text>
+                        <View>
+                            <FlatList
+                                data={seat}
+                                renderItem={selectSeatCard}
+                                horizontal
+                            />
+                        </View>
+                        <Text style={style.infoSeatViewText}>
+                            - Toplam Fiyat: {price * (seat.length)} ₺
+                        </Text>
+                    </View>
+            }
             <CustomButton
                 title='Onayla'
                 onClick={handleButton}

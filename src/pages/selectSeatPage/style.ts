@@ -25,13 +25,12 @@ export default StyleSheet.create({
         width: "70%",
         alignSelf: "center",
         height: "70%",
-
         justifyContent: "center"
     },
     infoSeatView: {
         flexDirection: "row",
         alignItems: "center",
-        marginHorizontal: 20
+        marginHorizontal: 20,
     },
     infoSeatViewText: {
         color: colors.black,
@@ -41,6 +40,16 @@ export default StyleSheet.create({
         color: colors.backgroundShape,
         fontSize: 17,
         marginTop: -4
+    },
+    seatBackground: {
+        width: 24,
+        height: 24,
+        marginRight: 5,
+        justifyContent: "center",
+        alignItems: "center"
+    },
+    selectSeatText: {
+        fontSize: 12
     }
 
 })

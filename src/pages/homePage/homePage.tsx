@@ -1,5 +1,5 @@
 import { View, Text, FlatList, StatusBar } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import style from './style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { CustomButton, CityDropdown, WeatherView, DateSelect } from '../../components'
@@ -11,12 +11,10 @@ import { useSelector } from "react-redux"
 import { RootState } from 'features/store'
 
 export const HomePage = () => {
-    const from = useSelector((state: RootState) => state.users.UserInfo.from)
-    const to = useSelector((state: RootState) => state.users.UserInfo.to)
-
+    const from = useSelector((state: RootState) => state.users.UserInfo.from || 'İstanbul')
+    const to = useSelector((state: RootState) => state.users.UserInfo.to || 'Ankara')
     const navigation = useNavigation<any>()
-    const [selectedItemId, setSelectedItemId] = React.useState(1)
-
+    const [selectedItemId, setSelectedItemId] = useState(1)
     const render = ({ item }: any) =>
         <VehicleCard
             title={item.title}
@@ -62,11 +60,11 @@ export const HomePage = () => {
                 <View style={style.weatherConteiner}>
                     <WeatherView
                         title=' Nereden'
-                        place={from==""?"İstanbul":from}
+                        place={from}
                     />
                     <WeatherView
                         title='Nereye'
-                        place={to==""?"Ankara":to}
+                        place={to}
                     />
                 </View>
                 <View style={style.selectTicketView}>

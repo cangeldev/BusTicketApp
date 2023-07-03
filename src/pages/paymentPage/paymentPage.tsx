@@ -7,19 +7,16 @@ import colors from 'assets/colors/colors'
 import { CardBack, CardFront } from 'assets/index'
 import { useSelector } from "react-redux"
 import { RootState } from 'features/store'
+
 export const PaymentPage = () => {
     const [isFront, setIsFront] = useState(true)
     const [name, setName] = useState("")
-    const [cardNo, setCardNo] = useState("")
+    const [cardNumber, setcardNumber] = useState("")
     const [cvcNo, setCvcNo] = useState("")
     const [validThruNo, setValidThruNo] = useState("")
     const flipRef = useRef(null)
-    const from = useSelector((state: RootState) => state.users.UserInfo.from)
-    const to = useSelector((state: RootState) => state.users.UserInfo.to)
-    const date = useSelector((state: RootState) => state.users.UserInfo.date)
-    const hours = useSelector((state: RootState) => state.users.UserInfo.hours)
-    const price = useSelector((state: RootState) => state.users.UserInfo.price)
-    const seat = useSelector((state: RootState) => state.users.UserInfo.seat)
+    const { from, to, date, hours, seat } = useSelector((state: RootState) => state.users.UserInfo)
+
     const toggleCard = () => {
         setIsFront(!isFront)
         if (flipRef.current) {
@@ -34,7 +31,7 @@ export const PaymentPage = () => {
         setIsFront(true)
         if (/^\d*$/.test(inputText)) {
             const formattedNumber = inputText.replace(/\d{4}(?=\d)/g, '$& ');
-            setCardNo(formattedNumber);
+            setcardNumber(formattedNumber);
         }
     };
     const handleCvcNoChange = (inputText: string) => {
@@ -68,7 +65,7 @@ export const PaymentPage = () => {
                             source={CardFront}
                             style={style.cardImage}>
                             <Text style={style.cardNo}>
-                                {cardNo}
+                                {cardNumber}
                             </Text>
                             <Text numberOfLines={1} style={style.name}>
                                 {name}
@@ -111,8 +108,7 @@ export const PaymentPage = () => {
                     />
                     <CustomTextView
                         title='Koltuk'
-                        //text={price.toString()}
-                        text={seat+" "}
+                        text={seat + " "}
                     />
                 </View>
             </View>
