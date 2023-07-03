@@ -15,8 +15,10 @@ export const SignInPage = () => {
     const [password, SetPassword] = useState("")
     const [checkPassword, SetCheckPassword] = useState("")
     const navigation = useNavigation<any>()
-
     const handleBack = () => {
+        navigation.goBack()
+    }
+    const handleCreatedUser = () => {
         handleCreated(email, password, checkPassword, navigation)
     }
     return (
@@ -64,7 +66,7 @@ export const SignInPage = () => {
                 <View style={style.buttonView}>
                     <CustomButton
                         title='Sign in'
-                        onClick={handleBack}
+                        onClick={handleCreatedUser}
                     />
                 </View>
                 <Text style={style.haveAccountTxt}>

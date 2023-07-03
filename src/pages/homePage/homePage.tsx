@@ -9,10 +9,13 @@ import { VehicleList } from 'utils/helper'
 import colors from 'assets/colors/colors'
 import { useSelector } from "react-redux"
 import { RootState } from 'features/store'
+import FlashMessage from 'components/flashMessage/flashMessage'
 
 export const HomePage = () => {
+
     const from = useSelector((state: RootState) => state.users.UserInfo.from || 'İstanbul')
     const to = useSelector((state: RootState) => state.users.UserInfo.to || 'Ankara')
+    const date = useSelector((state: RootState) => state.users.UserInfo.date)
     const navigation = useNavigation<any>()
     const [selectedItemId, setSelectedItemId] = useState(1)
     const render = ({ item }: any) =>
@@ -24,7 +27,14 @@ export const HomePage = () => {
             onClick={() => setSelectedItemId(item.id)}
         />
     const handleButton = () => {
-        navigation.navigate("BusListPage")
+        if ((from == "İstanbul" || "") || (to == "Ankara" || "")) {
+            FlashMessage("Lütfen Şehir Seçiniz")
+        }
+        else if (date == "") {
+            FlashMessage("Lütfen Tarih Seçiniz")
+        }
+        else
+            navigation.navigate("BusListPage")
     }
 
     return (

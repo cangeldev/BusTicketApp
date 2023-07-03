@@ -1,29 +1,38 @@
 import auth from '@react-native-firebase/auth';
+import FlashMessage from 'components/flashMessage/flashMessage';
 
 export const handleCreated = (email: string, password: string, checkPassword: string, navigation: any): void => {
     if (!email || !password) {
-        console.log("Email veya şifre boş geçilemez!");
+        FlashMessage("Email veya şifre boş geçilemez!")
         return;
     }
     if (checkPassword !== password) {
-        console.log("Şifreleriniz Uyuşmuyor!");
+        FlashMessage("Şifreleriniz Uyuşmuyor!")
         return;
     }
     auth().createUserWithEmailAndPassword(email, password)
         .then(() => {
-            console.log("Kaydınız Başarıyla oluşturuldu.");
+            FlashMessage("Kaydınız Başarıyla oluşturuldu.")
             navigation.navigate("LoginPage")
             auth().signOut();
         })
         .catch((err) => {
-            console.log(err.code);
+            console.log(err.code)
+            if (err.code == "auth/invalid-email") {
+                FlashMessage("Lütfen geçerli bir e-posta giriniz!")
+                return;
+            }
+            if (err.code == "auth/weak-password") {
+                FlashMessage("Şifreniz en az 6 karakter olmalıdır!")
+                return;
+            }
         });
 }
 
 export const handleLogin = (mail: string, password: string, navigation: any): void => {
 
     if (!mail || !password) {
-        console.log("Email veya şifre boş geçilemez!")
+        FlashMessage("Email veya şifre boş geçilemez!")
         return;
     }
     auth().signInWithEmailAndPassword(mail, password)
@@ -32,6 +41,20 @@ export const handleLogin = (mail: string, password: string, navigation: any): vo
         })
         .catch((err) => {
             console.log(err)
+
+            if (err.code == "auth/invalid-email") {
+                FlashMessage("Lütfen geçerli bir e-posta girin!")
+
+                return;
+            }
+            if (err.code == "auth/wrong-password") {
+                FlashMessage("Şifre yanlış!")
+                return;
+            }
+            if (err.code == "auth/user-not-found") {
+                FlashMessage("Girdiğin e-posta bir hesaba bağlı değil!")
+                return;
+            }
         })
 }
 

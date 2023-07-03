@@ -1,4 +1,4 @@
-import { View, Text, Image, StatusBar, FlatList, ImageBackground } from 'react-native'
+import { View, Text, StatusBar, FlatList, ImageBackground } from 'react-native'
 import React from 'react'
 import style from './style'
 import { CustomButton, CustomHeader } from '../../components'
@@ -9,13 +9,17 @@ import colors from 'assets/colors/colors'
 import { BackGroundImage, SelectSeat } from 'assets/index'
 import { useSelector } from "react-redux"
 import { RootState } from 'features/store'
+import FlashMessage from 'components/flashMessage/flashMessage'
 
 export const SelectSeatPage = () => {
     const { seat, price } = useSelector((state: RootState) => state.users.UserInfo)
-
     const navigation = useNavigation<any>()
     const handleButton = () => {
-        navigation.navigate("PaymentPage")
+        if (seat.length == 0) {
+            FlashMessage("Lütfen Koltuk Seçiniz")
+        }
+        else
+            navigation.navigate("PaymentPage")
     }
     const render =
         ({ item }: any) =>
@@ -26,7 +30,9 @@ export const SelectSeatPage = () => {
     const selectSeatCard =
         ({ item }: any) =>
             <View>
-                <ImageBackground source={SelectSeat} style={style.seatBackground} >
+                <ImageBackground
+                    source={SelectSeat}
+                    style={style.seatBackground} >
                     <Text style={style.selectSeatText}>
                         {item}
                     </Text>
