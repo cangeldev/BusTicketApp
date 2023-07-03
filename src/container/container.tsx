@@ -1,10 +1,12 @@
 import { View } from 'react-native'
 import React from 'react'
-import { BusListPage, HomePage, LoginPage, PaymentPage, SelectSeatPage, SignInPage } from '../pages'
+import { BusListPage, HomePage, LoginPage, PaymentPage, SelectSeatPage, SignInPage } from 'pages'
 import { NavigationContainer } from '@react-navigation/native'
 import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import auth from '@react-native-firebase/auth';
 
 export const Container = () => {
+    const user = auth().currentUser;
     const Stack = createNativeStackNavigator()
     return (
         <View style={{ flex: 1 }}>
@@ -12,7 +14,7 @@ export const Container = () => {
             <NavigationContainer>
                 <Stack.Navigator
                     screenOptions={{ headerShown: false }}
-                    initialRouteName='LoginPage'>
+                    initialRouteName={user ? "HomePage" : "LoginPage"}>
                     <Stack.Screen
                         name='LoginPage'
                         component={LoginPage}

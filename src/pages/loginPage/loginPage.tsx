@@ -1,5 +1,5 @@
 import { View, Text, FlatList, StatusBar, BackHandler } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import style from './style'
 import { CustomButton, CustomInput, Divider } from '../../components'
 import Lottie from 'lottie-react-native'
@@ -10,12 +10,13 @@ import { AnotherLoginList } from 'utils/helper'
 import { BusLottie } from 'assets/index'
 import colors from 'assets/colors/colors'
 import { useDispatch } from "react-redux"
-import { addEmail, addPassword } from 'features/userSlice'
+import { addEmail } from 'features/userSlice'
+import { handleLogin } from 'firebase/auth'
 
 export const LoginPage = () => {
     const dispatch = useDispatch()
-    const [email, SetEmail] = React.useState("")
-    const [password, SetPassword] = React.useState("")
+    const [email, SetEmail] = useState("")
+    const [password, SetPassword] = useState("")
 
     const navigation = useNavigation<any>()
     const render = ({ item }: any) =>
@@ -24,10 +25,10 @@ export const LoginPage = () => {
     const handleExit = () => {
         BackHandler.exitApp()
     }
-    const handleLogin = () => {
+    const handleeLogin = () => {
+        handleLogin(email, password, navigation)
         dispatch(addEmail(email))
-        navigation.navigate("HomePage")
-    
+
     }
     const handleSignIn = () => {
         navigation.navigate("SignInPage")
@@ -75,7 +76,7 @@ export const LoginPage = () => {
                 </Text>
                 <View style={style.buttonView}>
                     <CustomButton title='Log in'
-                        onClick={handleLogin}
+                        onClick={handleeLogin}
                     />
                 </View>
                 <Divider />

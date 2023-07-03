@@ -7,6 +7,8 @@ import colors from 'assets/colors/colors'
 import { CardBack, CardFront } from 'assets/index'
 import { useSelector } from "react-redux"
 import { RootState } from 'features/store'
+import { handleSignOut } from 'firebase/auth'
+import { useNavigation } from '@react-navigation/native'
 
 export const PaymentPage = () => {
     const [isFront, setIsFront] = useState(true)
@@ -16,6 +18,7 @@ export const PaymentPage = () => {
     const [validThruNo, setValidThruNo] = useState("")
     const flipRef = useRef(null)
     const { from, to, date, hours, seat } = useSelector((state: RootState) => state.users.UserInfo)
+    const navigation = useNavigation<any>();
 
     const toggleCard = () => {
         setIsFront(!isFront)
@@ -138,7 +141,10 @@ export const PaymentPage = () => {
                 title='CVC'
                 placeHolder='***'
             />
-            <CustomButton title='Onayla' />
+            <CustomButton
+                title='Onayla'
+                onClick={() => handleSignOut(navigation)}
+            />
         </View >
     );
 };

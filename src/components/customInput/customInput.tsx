@@ -22,6 +22,7 @@ export const CustomInput: FC<ICustomInput> = ({ placeHolder, title, maxlength, k
                 {title}
             </Text>
             <TextInput
+                autoCapitalize='none'
                 onChangeText={handleTextChange}
                 keyboardType={keyboardType}
                 maxLength={maxlength}

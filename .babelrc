@@ -11,7 +11,8 @@
             "container": "./src/container",
             "pages": "./src/pages",
             "utils": "./src/utils",
-            "features": "./src/features"
+            "features": "./src/features",
+            "firebase": "./src/firebase"
           }
         }
       ]

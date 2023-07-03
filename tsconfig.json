@@ -9,7 +9,8 @@
       "container/*": ["container/*"],
       "pages/*": ["pages/*"],
       "utils/*": ["utils/*"],
-      "features/*": ["features/*"]
+      "features/*": ["features/*"],
+      "firebase/*": ["firebase/*"]
     }
   }
 }

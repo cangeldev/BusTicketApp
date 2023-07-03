@@ -1,17 +1,23 @@
 import { View, Text, StatusBar } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import style from './style'
 import { CustomButton, CustomInput } from '../../components'
 import Lottie from 'lottie-react-native'
 import Icon from 'react-native-vector-icons/AntDesign'
 import { useNavigation } from '@react-navigation/native'
 import colors from 'assets/colors/colors'
+import { handleCreated } from 'firebase/auth'
 import { BusLottie } from 'assets/index'
 
 export const SignInPage = () => {
+
+    const [email, SetEmail] = useState("")
+    const [password, SetPassword] = useState("")
+    const [checkPassword, SetCheckPassword] = useState("")
     const navigation = useNavigation<any>()
+
     const handleBack = () => {
-        navigation.navigate("LoginPage")
+        handleCreated(email, password, checkPassword, navigation)
     }
     return (
         <View style={style.container}>
@@ -41,14 +47,17 @@ export const SignInPage = () => {
             />
             <View style={style.contentView}>
                 <CustomInput
+                    changeText={(a) => SetEmail(a)}
                     title='Email:'
                     placeHolder='example@gmail.com'
                 />
                 <CustomInput
+                    changeText={(a) => SetPassword(a)}
                     title='Password:'
                     placeHolder='********'
                 />
                 <CustomInput
+                    changeText={(a) => SetCheckPassword(a)}
                     title='Password:'
                     placeHolder='********'
                 />
