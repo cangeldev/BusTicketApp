@@ -55,11 +55,13 @@ export const SignInPage = () => {
                 />
                 <CustomInput
                     changeText={(a) => SetPassword(a)}
+                    secureTextEntry={true}
                     title='Password:'
                     placeHolder='********'
                 />
                 <CustomInput
                     changeText={(a) => SetCheckPassword(a)}
+                    secureTextEntry={true}
                     title='Password:'
                     placeHolder='********'
                 />

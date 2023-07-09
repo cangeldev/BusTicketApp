@@ -69,6 +69,7 @@ export const LoginPage = () => {
                 <CustomInput
                     changeText={(a) => SetPassword(a)}
                     title='Password:'
+                    secureTextEntry={true}
                     placeHolder='********'
                 />
                 <Text style={style.forgotPasswordTxt}>

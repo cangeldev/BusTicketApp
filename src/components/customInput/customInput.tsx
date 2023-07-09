@@ -7,10 +7,11 @@ interface ICustomInput {
     placeHolder: string
     maxlength?: number,
     keyboardType?: any,
+    secureTextEntry?: boolean,
     changeText: (text: string) => void;
 }
 
-export const CustomInput: FC<ICustomInput> = ({ placeHolder, title, maxlength, keyboardType, changeText }) => {
+export const CustomInput: FC<ICustomInput> = ({ placeHolder, title, maxlength, keyboardType, changeText, secureTextEntry }) => {
     const [txt, setTxt] = useState("")
     const handleTextChange = (inputText: string) => {
         setTxt(inputText);
@@ -28,6 +29,7 @@ export const CustomInput: FC<ICustomInput> = ({ placeHolder, title, maxlength, k
                 maxLength={maxlength}
                 style={style.txtInput}
                 placeholder={placeHolder}
+                secureTextEntry={secureTextEntry}
             />
         </View>
     )
