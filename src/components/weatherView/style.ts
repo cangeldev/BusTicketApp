@@ -5,23 +5,22 @@ export default StyleSheet.create({
     container: {
         backgroundColor: colors.white,
         elevation: 3,
-        marginHorizontal: 10,
         padding: 10,
+        paddingHorizontal: 8,
         borderRadius: 10,
-        width: 170,
-
+        width: 170
     },
     title: {
         position: "absolute",
         top: -12,
         backgroundColor: colors.white,
-        left: 6,
+        left: 4,
         color: colors.black,
         paddingHorizontal: 6,
         fontWeight: "bold"
     },
     weatherHeat: {
-        fontSize: 50
+        fontSize: 45
     },
     cityText: {
         overflow: "hidden",
@@ -36,7 +35,7 @@ export default StyleSheet.create({
         width: 60,
         height: 60,
         position: "absolute",
-        right: 10,
+        right: 1,
         top: 10
     }
 })

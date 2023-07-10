@@ -34,9 +34,10 @@ export const CityDropdown: FC<ICityDropDown> = ({ title }) => {
                 data={CityList}
                 onSelect={(selectedItem, index) => {
                     console.log(selectedItem, index)
+                    title == "Kalkış Noktası" ? dispatch(addFromCity(selectedItem)) : dispatch(addToCity(selectedItem))
                 }}
                 buttonTextAfterSelection={(selectedItem) => {
-                    title == "Kalkış Noktası" ? dispatch(addFromCity(selectedItem)) : dispatch(addToCity(selectedItem))
+                  
                     return selectedItem
                 }}
                 rowTextForSelection={(item, index) => {

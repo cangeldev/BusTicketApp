@@ -1,7 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 
-
 interface UserState {
     UserLogin: {
         email: string
@@ -11,6 +10,7 @@ interface UserState {
         from: string,
         to: string,
         date: string,
+        formatDate: string,
         hours: string,
         price: number
         seat: any
@@ -26,6 +26,7 @@ const initialState: UserState = {
         from: "",
         to: "",
         date: "",
+        formatDate: "",
         hours: "",
         price: 0,
         seat: []
@@ -52,19 +53,21 @@ export const userSlice = createSlice({
         addToDate: (state, action: PayloadAction<string>) => {
             state.UserInfo.date = action.payload
         },
+        addToFormatDate: (state, action: PayloadAction<string>) => {
+            state.UserInfo.formatDate = action.payload
+        },
         addToHours: (state, action: PayloadAction<string>) => {
             state.UserInfo.hours = action.payload
         },
         addToPrice: (state, action: PayloadAction<number>) => {
             state.UserInfo.price = action.payload
         },
-
         addToSeat: (state, action) => {
             state.UserInfo.seat.push(action.payload)
         },
     },
 })
 
-export const { addEmail, addPassword, addFromCity, addToCity, addToDate, addToHours, addToPrice ,addToSeat} = userSlice.actions
+export const { addEmail, addPassword, addFromCity, addToCity, addToDate, addToHours, addToPrice, addToSeat, addToFormatDate } = userSlice.actions
 
 export default userSlice.reducer

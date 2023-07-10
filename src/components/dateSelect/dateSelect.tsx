@@ -4,7 +4,7 @@ import DatePicker from 'react-native-date-picker'
 import style from './style'
 import IconM from 'react-native-vector-icons/MaterialCommunityIcons';
 import { useDispatch } from "react-redux"
-import { addToDate } from 'features/userSlice';
+import { addToDate, addToFormatDate } from 'features/userSlice';
 
 export const DateSelect = () => {
     const dispatch = useDispatch()
@@ -69,6 +69,7 @@ export const DateSelect = () => {
                     setOpen(false)
                     setDate(selectedDate)
                     dispatch(addToDate(formatDate(selectedDate) + " " + getMonthText(selectedDate) + " " + getDayText(selectedDate)))
+                    dispatch(addToFormatDate(selectedDate.toISOString().split('T')[0]))
                 }}
                 onCancel={() => {
                     setOpen(false)

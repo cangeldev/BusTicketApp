@@ -1,5 +1,5 @@
 import { View, Text, FlatList, StatusBar } from 'react-native'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import style from './style'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { CustomButton, CityDropdown, WeatherView, DateSelect } from '../../components'
@@ -10,14 +10,27 @@ import colors from 'assets/colors/colors'
 import { useSelector } from "react-redux"
 import { RootState } from 'features/store'
 import FlashMessage from 'components/flashMessage/flashMessage'
+import { FetchWeatherData } from 'utils/api'
 
 export const HomePage = () => {
-
-    const from = useSelector((state: RootState) => state.users.UserInfo.from || 'İstanbul')
-    const to = useSelector((state: RootState) => state.users.UserInfo.to || 'Ankara')
     const date = useSelector((state: RootState) => state.users.UserInfo.date)
     const navigation = useNavigation<any>()
     const [selectedItemId, setSelectedItemId] = useState(1)
+    const [fromTemp, setFromTemp] = useState(0)
+    const [toTemp, setToTemp] = useState(0)
+    const from = useSelector((state: RootState) => state.users.UserInfo.from || 'İstanbul')
+    const to = useSelector((state: RootState) => state.users.UserInfo.to || 'Ankara')
+    const formatDate = useSelector((state: RootState) => state.users.UserInfo.formatDate)
+    const [fromImage, setFromImage] = useState(null)
+    const [toImage, setToImage] = useState(null)
+    const fromResim = "https:" + fromImage
+    const toResim = "https:" + toImage
+
+    useEffect(() => {
+        FetchWeatherData(from, setFromTemp, setFromImage, formatDate);
+        FetchWeatherData(to, setToTemp, setToImage, formatDate);
+    }, [date]);
+
     const render = ({ item }: any) =>
         <VehicleCard
             title={item.title}
@@ -71,10 +84,14 @@ export const HomePage = () => {
                     <WeatherView
                         title=' Nereden'
                         place={from}
+                        temp={fromTemp}
+                        image={fromResim}
                     />
                     <WeatherView
                         title='Nereye'
                         place={to}
+                        temp={toTemp}
+                        image={toResim}
                     />
                 </View>
                 <View style={style.selectTicketView}>

@@ -2,7 +2,6 @@ export const Google = require("./images/google.png");
 export const Facebook = require("./images/facebook.png");
 export const Instagram = require("./images/instagram.png");
 export const BusLottie = require("./images/bus.json")
-export const Sun = require("./images/sun.png")
 export const Pamukkale = require("./images/pamukkale.png")
 export const Lider = require("./images/lider.png")
 export const Selcuk = require("./images/selcuk.png")
