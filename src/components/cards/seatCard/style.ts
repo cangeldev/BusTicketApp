@@ -65,4 +65,4 @@ export default StyleSheet.create({
         height: 70,
         resizeMode: "stretch"
     }
-});
+})

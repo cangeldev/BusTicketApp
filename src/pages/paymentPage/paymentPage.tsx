@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { View, Text, TouchableOpacity, StatusBar, ImageBackground } from 'react-native'
+import { View, Text, TouchableOpacity, StatusBar, ImageBackground, Alert } from 'react-native'
 import * as Animatable from 'react-native-animatable'
 import style from './style'
 import { CustomButton, CustomInput, CustomTextView } from '../../components'
@@ -143,7 +143,12 @@ export const PaymentPage = () => {
             />
             <CustomButton
                 title='Onayla'
-                onClick={() => handleSignOut(navigation)}
+                onClick={() => {
+                    Alert.alert('Ödeme İşleminiz Başarılı', 'İyi yolculuklar Dileriz.', [
+                        { text: 'Bitir', onPress: () => null },
+                    ]);
+                    handleSignOut(navigation)
+                }}
             />
         </View >
     );

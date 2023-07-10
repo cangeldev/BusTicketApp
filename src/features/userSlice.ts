@@ -30,12 +30,11 @@ const initialState: UserState = {
         hours: "",
         price: 0,
         seat: []
-    },
+    }
 }
 
 export const userSlice = createSlice({
     name: 'userInfo',
-
     initialState,
     reducers: {
         addEmail: (state, action: PayloadAction<string>) => {

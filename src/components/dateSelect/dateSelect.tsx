@@ -7,6 +7,7 @@ import { useDispatch } from "react-redux"
 import { addToDate, addToFormatDate } from 'features/userSlice';
 
 export const DateSelect = () => {
+
     const dispatch = useDispatch()
     const [date, setDate] = useState(new Date())
     const [open, setOpen] = useState(false)

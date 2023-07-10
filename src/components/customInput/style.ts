@@ -4,7 +4,7 @@ import { StyleSheet } from 'react-native'
 export default StyleSheet.create({
     container: {
         marginHorizontal: 15,
-        marginVertical: 7,
+        marginVertical: 7
     },
     title: {
         fontWeight: "bold",
@@ -17,6 +17,6 @@ export default StyleSheet.create({
         backgroundColor: colors.white,
         elevation: 3,
         paddingHorizontal: 10,
-        paddingVertical: 8,
+        paddingVertical: 8
     }
 })

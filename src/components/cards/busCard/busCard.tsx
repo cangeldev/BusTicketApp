@@ -17,10 +17,12 @@ interface IBusCard {
 }
 
 export const BusCard: FC<IBusCard> = ({ price, time, duration, image }) => {
+
     const from = useSelector((state: RootState) => state.users.UserInfo.from)
     const to = useSelector((state: RootState) => state.users.UserInfo.to)
     const dispatch = useDispatch()
     const navigation = useNavigation<any>()
+
     const handleButton = () => {
         navigation.navigate("SelectSeatPage")
         dispatch(addToHours(time))

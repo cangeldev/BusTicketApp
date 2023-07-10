@@ -6,5 +6,5 @@ export default {
     buttonBackground: "#2196f3",
     LoginTxt: "#ff6f01",
     backgroundShape: "#c7c7c7",
-    grey: "grey",
+    grey: "grey"
 }

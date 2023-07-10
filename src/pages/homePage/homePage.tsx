@@ -46,8 +46,9 @@ export const HomePage = () => {
         else if (date == "") {
             FlashMessage("Lütfen Tarih Seçiniz")
         }
-        else
+        else {
             navigation.navigate("BusListPage")
+        }
     }
 
     return (

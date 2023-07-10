@@ -5,6 +5,7 @@ import style from './style'
 interface IAnotherLoginCard {
     image: Image,
 }
+
 export const AnotherLoginCard: FC<IAnotherLoginCard> = ({ image }) => {
     return (
         <View style={style.container}>

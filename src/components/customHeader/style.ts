@@ -37,5 +37,5 @@ export default StyleSheet.create({
         marginTop: 5,
         color: colors.white,
         fontWeight: "bold"
-    },
+    }
 })

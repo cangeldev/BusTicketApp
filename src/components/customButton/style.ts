@@ -13,6 +13,6 @@ export default StyleSheet.create({
         padding: 10,
         alignSelf: "center",
         fontSize: 17,
-        fontWeight: "bold",
+        fontWeight: "bold"
     }
 })

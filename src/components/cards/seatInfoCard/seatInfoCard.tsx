@@ -6,6 +6,7 @@ interface ISeatInfoCard {
     image: Image
     text: string
 }
+
 export const SeatInfoCard: FC<ISeatInfoCard> = ({ text, image }) => {
     return (
         <View style={style.container}>

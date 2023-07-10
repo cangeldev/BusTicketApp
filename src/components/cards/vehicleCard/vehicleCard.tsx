@@ -27,7 +27,7 @@ export const VehicleCard: FC<IVehicleCard> = ({ title, vehicle, id, selectedItem
                 size={20}
                 style={{
                     color: id === selectedItemId ?
-                        colors.white : "grey"
+                        colors.white : colors.grey
                 }}
             />
             <Text style={[style.txt, {

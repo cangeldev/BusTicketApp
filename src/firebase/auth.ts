@@ -10,6 +10,7 @@ export const handleCreated = (email: string, password: string, checkPassword: st
         FlashMessage("Şifreleriniz Uyuşmuyor!")
         return;
     }
+
     auth().createUserWithEmailAndPassword(email, password)
         .then(() => {
             FlashMessage("Kaydınız Başarıyla oluşturuldu.")
@@ -37,6 +38,7 @@ export const handleLogin = (mail: string, password: string, navigation: any): vo
     }
     auth().signInWithEmailAndPassword(mail, password)
         .then(() => {
+            FlashMessage("Giriş Başarılı")
             navigation.navigate("HomePage")
         })
         .catch((err) => {
@@ -59,6 +61,7 @@ export const handleLogin = (mail: string, password: string, navigation: any): vo
 }
 
 export const handleSignOut = (navigation: any): void => {
+
     auth()
         .signOut()
         .then(() => {

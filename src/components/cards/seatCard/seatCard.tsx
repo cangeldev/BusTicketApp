@@ -5,14 +5,14 @@ import { EmptySeat, Female, FemaleSeat, Male, MaleSeat, SelectSeat } from 'asset
 import { CustomButton } from 'components/customButton'
 import { useDispatch } from "react-redux"
 import { addToSeat } from 'features/userSlice'
+
 interface ISeatCard {
     value: number,
-    id: number,
     status: string,
     position?: string
 }
 
-export const SeatCard: FC<ISeatCard> = ({ value, id, status, position }) => {
+export const SeatCard: FC<ISeatCard> = ({ value, status, position }) => {
     const [modalVisible, setModalVisible] = useState(false);
     const [selectedOption, setSelectedOption] = useState('');
     const dispatch = useDispatch()

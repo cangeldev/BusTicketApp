@@ -28,7 +28,6 @@ export const LoginPage = () => {
     const handleeLogin = () => {
         handleLogin(email, password, navigation)
         dispatch(addEmail(email))
-
     }
     const handleSignIn = () => {
         navigation.navigate("SignInPage")
